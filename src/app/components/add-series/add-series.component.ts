@@ -7,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddSeriesComponent implements OnInit {
   photo: string;
+  isUrl = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
 
   }
 
+  displayPhoto() {
+    this.isUrl = true;
+  }
 }
