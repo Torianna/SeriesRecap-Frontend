@@ -25,4 +25,9 @@ export class NavBarComponent implements OnInit {
   onLogOut($event: Event) {
     localStorage.removeItem('username');
   }
+
+  // onSeriesList($event: Event) {
+  //   this.open;
+  //
+  // }
 }

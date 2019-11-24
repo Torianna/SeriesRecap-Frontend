@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesListComponent implements OnInit {
 
-  constructor(series: Se) { }
+  constructor() { }
 
   ngOnInit() {
   }
