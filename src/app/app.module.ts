@@ -20,6 +20,7 @@ import { AddSeriesComponent } from './components/add-series/add-series.component
 import { RatingModule } from 'ng-starrating';
 import { RatingComponent } from './components/rating/rating.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SeriesListComponent } from './components/series-list/series-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     LoginComponent,
     AddSeriesComponent,
     RatingComponent,
-    NavBarComponent
+    NavBarComponent,
+    SeriesListComponent
   ],
   imports: [
     BrowserModule,
