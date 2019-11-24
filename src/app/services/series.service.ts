@@ -6,7 +6,7 @@ import { Series } from '../models/series';
   providedIn: 'root'
 })
 export class SeriesService {
-  private url = `localhost:8080/seriesRecap/series`;
+  private url = `http://localhost:8080/seriesRecap/series`;
 
   constructor(private http: HttpClient) {
   }
@@ -16,7 +16,7 @@ export class SeriesService {
     return await this.http.get<any[]>(this.url).toPromise();
   }
 
-  addUser(series: Series) {
+  addSeries(series: Series) {
     return this.http.post<Series>(this.url, series).toPromise();
   }
 }

@@ -13,7 +13,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSlideToggleModule
+  MatSlideToggleModule, MatStepperModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
@@ -21,6 +21,10 @@ import { RatingModule } from 'ng-starrating';
 import { RatingComponent } from './components/rating/rating.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SeriesListComponent } from './components/series-list/series-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SeriesService } from './services/series.service';
+import { UserService } from './services/user.service';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +49,9 @@ import { SeriesListComponent } from './components/series-list/series-list.compon
     MatCardModule,
     MatIconModule,
     RatingModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatStepperModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

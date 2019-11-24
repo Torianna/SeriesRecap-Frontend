@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StarRatingComponent } from 'ng-starrating';
+import { Series } from '../../models/series';
+import { Rates } from '../../models/rates';
 
 @Component({
   selector: 'app-rating',
@@ -8,6 +10,18 @@ import { StarRatingComponent } from 'ng-starrating';
 })
 export class RatingComponent implements OnInit {
   isEnded = false;
+  series: Series = {
+    name: '',
+    year: '',
+    description: '',
+    photo: '',
+    rate: {
+      plot: 0,
+      effects: 0,
+      budget: 0,
+      ending: 0
+    }
+  };
 
   constructor() {
   }
@@ -15,12 +29,6 @@ export class RatingComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }) {
-    alert(`Old Value:${ $event.oldValue },
-      New Value: ${ $event.newValue },
-      Checked Color: ${ $event.starRating.checkedcolor },
-      Unchecked Color: ${ $event.starRating.uncheckedcolor }`);
-  }
 
   unblockOption() {
     this.isEnded = true;

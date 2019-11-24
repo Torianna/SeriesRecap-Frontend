@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher, MatDialog, MatDialogRef } from '@angular/material';
 
@@ -15,6 +15,8 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  @ViewChild('username', { static: false }) username: { nativeElement: HTMLInputElement }
+  @ViewChild('password', { static: false }) password: { nativeElement: HTMLInputElement }
 
   constructor() { }
   userFormControl = new FormControl('', [

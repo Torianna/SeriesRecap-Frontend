@@ -1,24 +1,58 @@
-
 <div class="box">
   <h4 mat-dialog-title>Add Series</h4>
   <div mat-dialog-content>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Name">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Year">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Description"></textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Url of a picture" [(ngModel)]="photo" (input)="displayPhoto()">
-    </mat-form-field>
-    <mat-card *ngIf="isUrl">
-      <img [src]=photo>
-    </mat-card>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-raised-button color="primary" type="submit" name="upload" value="Upload">Upload</button>
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+
+      <mat-step [stepControl]="firstFormGroup">
+
+        <form [formGroup]="firstFormGroup">
+          <div class="info">
+            <ng-template matStepLabel>Fill out information about series</ng-template>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Name" [(ngModel)]="series.name" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Year" [(ngModel)]="series.year" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Description" [(ngModel)]="series.description" [ngModelOptions]="{standalone: true}"> </textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Url of a picture" [(ngModel)]="series.photo" [ngModelOptions]="{standalone: true}" (input)="displayPhoto()">
+            </mat-form-field>
+            <mat-card *ngIf="isUrl">
+              <img [src]=series.photo>
+            </mat-card>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </div>
+
+
+        </form>
+
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Rate</ng-template>
+          <app-rating></app-rating>
+        </form>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addSeries()">Upload</button>
+
+      </mat-step>
+    </mat-vertical-stepper>
   </div>
 </div>
+
