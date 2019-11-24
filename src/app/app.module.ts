@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
 import { RatingModule } from 'ng-starrating';
 import { RatingComponent } from './components/rating/rating.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RatingComponent } from './components/rating/rating.component';
     MainComponent,
     LoginComponent,
     AddSeriesComponent,
-    RatingComponent
+    RatingComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
