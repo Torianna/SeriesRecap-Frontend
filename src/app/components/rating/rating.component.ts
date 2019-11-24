@@ -7,6 +7,7 @@ import { StarRatingComponent } from 'ng-starrating';
   styleUrls: ['./rating.component.scss']
 })
 export class RatingComponent implements OnInit {
+  isEnded = false;
 
   constructor() {
   }
@@ -19,5 +20,13 @@ export class RatingComponent implements OnInit {
       New Value: ${ $event.newValue },
       Checked Color: ${ $event.starRating.checkedcolor },
       Unchecked Color: ${ $event.starRating.uncheckedcolor }`);
+  }
+
+  unblockOption() {
+    this.isEnded = true;
+  }
+
+  blockOption() {
+    this.isEnded = false;
   }
 }

@@ -6,7 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
-import { MatButtonModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatSlideToggleModule
+} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
 import { RatingModule } from 'ng-starrating';
@@ -32,7 +40,8 @@ import { RatingComponent } from './components/rating/rating.component';
     FormsModule,
     MatCardModule,
     MatIconModule,
-    RatingModule
+    RatingModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

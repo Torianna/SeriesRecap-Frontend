@@ -9,12 +9,15 @@ export class AddSeriesComponent implements OnInit {
   photo: string;
   isUrl = false;
 
+
   constructor() {
   }
 
   ngOnInit() {
 
   }
+
+
 
   displayPhoto() {
     this.isUrl = true;
