@@ -1,0 +1,12 @@
+<div *ngIf="localStorage.getItem('username'); else login" class="buttons">
+  <a (click)="onLogOut($event)">LOG OUT</a>
+</div>
+<ng-template #login>
+  <div class="buttons">
+    <a (click)="onLogIn($event)">TV Series</a>
+    <a (click)="onLogIn($event)">LOG IN</a>
+  </div>
+</ng-template>
+
+
+

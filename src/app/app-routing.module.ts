@@ -3,12 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
+import { RatingComponent } from './components/rating/rating.component';
+
 
 
 const routes: Routes = [
   {
     path: 'main',
     component: MainComponent
+  },
+  {
+    path: 'rating',
+    component: RatingComponent
   },
   {
     path: 'login',

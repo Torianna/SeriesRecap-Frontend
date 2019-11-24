@@ -1,22 +1,24 @@
-<p>add-series works!</p>
+
 <div class="box">
   <h4 mat-dialog-title>Add Series</h4>
   <div mat-dialog-content>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Name">
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Year">
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Description"></textarea>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Url of a picture" [(ngModel)]="photo">
-  </mat-form-field>
-  <img [src]=photo>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Year">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Description"></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Url of a picture" [(ngModel)]="photo" (input)="displayPhoto()">
+    </mat-form-field>
+    <mat-card *ngIf="isUrl">
+      <img [src]=photo>
+    </mat-card>
   </div>
   <div mat-dialog-actions>
-    <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" >Upload</button>
+    <button mat-raised-button color="primary" type="submit" name="upload" value="Upload">Upload</button>
   </div>
 </div>
