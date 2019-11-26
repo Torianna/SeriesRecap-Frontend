@@ -19,4 +19,8 @@ export class SeriesService {
   addSeries(series: Series) {
     return this.http.post<Series>(this.url, series).toPromise();
   }
+
+  deleteSeriesById(id: number) {
+    return this.http.delete(`${this.url}/${id}`).toPromise();
+  }
 }

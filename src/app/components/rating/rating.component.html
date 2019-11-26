@@ -15,7 +15,7 @@
     <star-rating value="5" checkedcolor="gold" uncheckedcolor="grey" size="44px" readonly="false" name="plot"
                  ngDefaultControl (rate)="onPlot($event)"></star-rating>
   </div>
-  <mat-slide-toggle (toggleChange)="unblockOption()">Is this series came to the end?</mat-slide-toggle>
+  <mat-slide-toggle (toggleChange)="unblockOption()">Did this series end?</mat-slide-toggle>
   <div class="rate" *ngIf="isEnded">
     Ending
     <star-rating value="5" checkedcolor="gold" uncheckedcolor="grey" size="44px" readonly="false" name="ending"

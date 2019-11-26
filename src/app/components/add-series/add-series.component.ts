@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Series } from '../../models/series';
 import { SeriesService } from '../../services/series.service';
 import { MatDialogRef } from '@angular/material';
@@ -12,6 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddSeriesComponent implements OnInit {
   photo: string;
   isUrl = false;
+
+
+
 
   series: Series =
     {
@@ -27,7 +30,7 @@ export class AddSeriesComponent implements OnInit {
         ending: 0,
         totalScore: 0
       },
-  totalScore: 0
+      totalScore: 0
 
     };
 
@@ -78,4 +81,5 @@ export class AddSeriesComponent implements OnInit {
   displayPhoto() {
     this.isUrl = true;
   }
+
 }
