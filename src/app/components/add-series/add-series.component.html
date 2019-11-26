@@ -40,8 +40,7 @@
           <ng-template matStepLabel>Rate</ng-template>
           <app-rating [series2]="series"></app-rating>
         </form>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext (click)="calculateAvarage()">Next</button>
       </mat-step>
 
       <mat-step>

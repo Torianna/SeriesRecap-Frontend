@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AddSeriesComponent } from '../add-series/add-series.component';
-import { MatDialog, MatTableDataSource } from '@angular/material';
+import { MatDialog, MatSort, MatTableDataSource } from '@angular/material';
 import { SeriesService } from '../../services/series.service';
 import { Series } from '../../models/series';
 
@@ -13,10 +13,12 @@ export class SeriesListComponent implements OnInit {
 
   series: Series[] = [];
   dataSource = new MatTableDataSource(this.series);
-  displayedColumns: string[] = ['id', 'name'];
+
+  displayedColumns: string[] = ['id', 'name', 'totalScore'];
 
   constructor(public dialog: MatDialog, private seriesService: SeriesService) {
   }
+
 
   ngOnInit() {
     this.getAllSeries();

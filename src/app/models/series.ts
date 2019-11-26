@@ -7,4 +7,5 @@ export class Series {
   photo: string;
   description: string;
   rate: Rates;
+  totalScore: number;
 }

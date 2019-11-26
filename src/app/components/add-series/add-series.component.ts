@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddSeriesComponent implements OnInit {
   photo: string;
   isUrl = false;
+
   series: Series =
     {
       id: 0,
@@ -23,8 +24,10 @@ export class AddSeriesComponent implements OnInit {
         plot: 0,
         effects: 0,
         budget: 0,
-        ending: 0
-      }
+        ending: 0,
+        totalScore: 0
+      },
+  totalScore: 0
 
     };
 
@@ -38,6 +41,17 @@ export class AddSeriesComponent implements OnInit {
               private formBuilder: FormBuilder) {
   }
 
+  calculateAvarage() {
+    console.log(this.series.totalScore);
+    if (this.series.rate.ending === 0) {
+      this.series.totalScore = this.series.rate.totalScore / 3;
+    } else if (this.series.rate.ending !== 0) {
+      this.series.totalScore = this.series.rate.totalScore / 4;
+    }
+    console.log(this.series.totalScore);
+  }
+
+
   ngOnInit() {
     this.firstFormGroup = this.formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -46,6 +60,7 @@ export class AddSeriesComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
+
 
   async addSeries() {
     console.log(this.series);

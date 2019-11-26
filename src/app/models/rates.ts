@@ -3,4 +3,5 @@ export class Rates {
   effects: number;
   ending: number;
   budget: number;
+  totalScore: number;
 }
