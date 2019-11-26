@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { StarRatingComponent } from 'ng-starrating';
+import { Component, Input, OnInit } from '@angular/core';
 import { Series } from '../../models/series';
-import { Rates } from '../../models/rates';
+import { StarRatingComponent } from 'ng-starrating';
+
 
 @Component({
   selector: 'app-rating',
@@ -10,18 +10,8 @@ import { Rates } from '../../models/rates';
 })
 export class RatingComponent implements OnInit {
   isEnded = false;
-  series: Series = {
-    name: '',
-    year: '',
-    description: '',
-    photo: '',
-    rate: {
-      plot: 0,
-      effects: 0,
-      budget: 0,
-      ending: 0
-    }
-  };
+
+  @Input() public series2: Series;
 
   constructor() {
   }
@@ -36,5 +26,23 @@ export class RatingComponent implements OnInit {
 
   blockOption() {
     this.isEnded = false;
+  }
+
+  onBudget($event: { newValue: number; starRating: StarRatingComponent }) {
+    this.series2.rate.budget = $event.newValue;
+  }
+
+  onEffects($event: { newValue: number; starRating: StarRatingComponent }) {
+
+    this.series2.rate.effects = $event.newValue;
+  }
+
+  onPlot($event: { newValue: number; starRating: StarRatingComponent }) {
+    this.series2.rate.plot = $event.newValue;
+  }
+
+  onEnding($event: { newValue: number; starRating: StarRatingComponent }) {
+    this.series2.rate.ending = $event.newValue;
+
   }
 }

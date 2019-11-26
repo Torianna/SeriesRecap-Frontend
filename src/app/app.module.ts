@@ -13,7 +13,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSlideToggleModule, MatStepperModule
+  MatSlideToggleModule, MatStepperModule, MatTableModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
@@ -51,7 +51,8 @@ import { UserService } from './services/user.service';
     RatingModule,
     MatSlideToggleModule,
     MatStepperModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

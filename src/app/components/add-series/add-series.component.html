@@ -1,7 +1,9 @@
+
 <div class="box">
   <h4 mat-dialog-title>Add Series</h4>
-  <div mat-dialog-content>
-    <mat-vertical-stepper [linear]="isLinear" #stepper>
+  <div mat-dialog-content style="overflow-y: hidden">
+    <div class="style">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
 
       <mat-step [stepControl]="firstFormGroup">
 
@@ -36,7 +38,7 @@
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Rate</ng-template>
-          <app-rating></app-rating>
+          <app-rating [series2]="series"></app-rating>
         </form>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
@@ -52,7 +54,8 @@
         <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addSeries()">Upload</button>
 
       </mat-step>
-    </mat-vertical-stepper>
+    </mat-horizontal-stepper>
+    </div>
   </div>
 </div>
 

@@ -14,6 +14,7 @@ export class AddSeriesComponent implements OnInit {
   isUrl = false;
   series: Series =
     {
+      id: 0,
       name: '',
       description: '',
       year: '',
@@ -48,14 +49,14 @@ export class AddSeriesComponent implements OnInit {
 
   async addSeries() {
     console.log(this.series);
-    // this.service.addSeries(this.series)
-    //   .then(() => {
-    //     this.dialogRef.close();
-    //   })
-    //   .catch(err => {
-    //     alert('Something went wrong');
-    //     console.error(err);
-    //   });
+    this.service.addSeries(this.series)
+      .then(() => {
+        this.dialogRef.close();
+      })
+      .catch(err => {
+        alert('Something went wrong');
+        console.error(err);
+      });
   }
 
 
