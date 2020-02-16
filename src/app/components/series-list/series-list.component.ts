@@ -28,7 +28,9 @@ export class SeriesListComponent implements OnInit {
   }
 
   openAddSeries(): void {
-    this.dialog.open(AddSeriesComponent, {});
+    this.dialog.open(AddSeriesComponent, {}).afterClosed().subscribe(result => {
+      this.getAllSeries();
+    });
 
 
   }

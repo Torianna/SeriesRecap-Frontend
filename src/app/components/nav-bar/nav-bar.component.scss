@@ -15,7 +15,7 @@
   position: sticky;
   top: 0;
   z-index: 2;
-  background: #2C3531;
+ // background: #2C3531;
 }
 
 img {
@@ -30,17 +30,17 @@ img {
 
   a {
     margin: 0 10px;
-    color: #FFCB9A;
+   // color: #FFCB9A;
     padding: 1rem;
     font-weight: 700;
     border-radius: .5rem;
-    background-color: #116460;
+   // background-color: #116460;
     transition: .2s ease-in-out;
     cursor: pointer;
   }
 
   a:hover {
-    background-color: #11928e;
+    //background-color: #11928e;
   }
 }
 

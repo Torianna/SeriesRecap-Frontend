@@ -22,8 +22,9 @@ import { RatingComponent } from './components/rating/rating.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SeriesListComponent } from './components/series-list/series-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SeriesService } from './services/series.service';
-import { UserService } from './services/user.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { UserService } from './services/user.service';
     RatingComponent,
     NavBarComponent,
     SeriesListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { UserService } from './services/user.service';
     MatSlideToggleModule,
     MatStepperModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
