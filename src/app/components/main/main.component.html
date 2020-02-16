@@ -1,14 +1,22 @@
-
-<div class="router">
-<!--  <router-outlet></router-outlet>-->
-
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-color: #2C3531;height: 100%; width: border-box">
+<div class="router" style=" width: 100%;">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data="wrap" >
 
     <div class="carousel-inner">
       <div  class="carousel-item active">
-        <ng-container *ngFor="let serie of series">
-        <img class="d-block w-100" [src]="serie.photo" alt="First slide" >
+        <ng-container *ngFor="let serie of series.slice(0,1);" >
+        <img class="d-block w-100 h-auto" [src]="serie.photo" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{ serie.name }}</h5>
+            <p>{{ serie.description }}</p>
+          </div>
         </ng-container>
+      </div>
+      <div class="carousel-item" *ngFor="let serie of series.slice(1,series.length)" >
+        <img class="d-block w-100 h-auto" [src]="serie.photo" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ serie.name }}</h5>
+          <p>{{ serie.description }}</p>
+        </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

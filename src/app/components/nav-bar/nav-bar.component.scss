@@ -12,10 +12,10 @@
 
   @include mat-elevation(6);
 
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 2;
- // background: #2C3531;
+  background: rgba(204, 204, 204, 0.5);
 }
 
 img {
