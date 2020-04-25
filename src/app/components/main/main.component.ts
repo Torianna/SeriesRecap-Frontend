@@ -21,8 +21,8 @@ export class MainComponent implements OnInit {
   }
 
   async getAllSeries() {
-    this.series = await this.seriesService.getAllSeries();
-    console.log(this.series.length);
+    // this.series = await this.seriesService.getAllSeries();
+    // console.log(this.series.length);
   }
 
 }

@@ -25,12 +25,25 @@ mat-card{
 
 img
 {
-  max-height: 100%;
-
   max-width: 100%;
 }
 .info
 {
   display: flex;
   flex-direction: column;
+}
+
+
+
+
+.flexWrap{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+img{
+  width:100px;
+  padding: 5px;
+
 }

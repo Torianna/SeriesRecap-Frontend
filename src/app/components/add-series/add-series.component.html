@@ -10,22 +10,41 @@
         <form [formGroup]="firstFormGroup">
           <div class="info">
             <ng-template matStepLabel>Fill out information about series</ng-template>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Name" [(ngModel)]="series.name" [ngModelOptions]="{standalone: true}">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Year" [(ngModel)]="series.year" [ngModelOptions]="{standalone: true}">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Description" [(ngModel)]="series.description" [ngModelOptions]="{standalone: true}"> </textarea>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Url of a picture" [(ngModel)]="series.photo" [ngModelOptions]="{standalone: true}" (input)="displayPhoto()">
-            </mat-form-field>
-            <mat-card *ngIf="isUrl">
-              <img [src]=series.photo>
-            </mat-card>
-            <div>
+            <form (submit)="searchSeries()">
+              <input type="text" class="form-control" [(ngModel)]="searchStr" name="searchStr">
+              <br>
+              <button class="btn btn-primary btn">Search your Favourite Series</button>
+            </form>
+          <div class="flexWrap" >
+            <div *ngFor="let serie of this.series | paginate: { itemsPerPage: 10, currentPage: p }" >
+                <img *ngIf="serie.image_thumbnail_path" class="thumbnail" src="{{serie.image_thumbnail_path}}">
+<!--                <div class="desc">-->
+<!--                  {{serie.name}}-->
+<!--                  {{serie.network}}-->
+<!--                </div>-->
+            </div>
+          </div>
+            <pagination-controls autoHide="true" (pageChange)="p = $event"></pagination-controls>
+
+<!--            <mat-form-field class="example-full-width">-->
+<!--              <input matInput placeholder="Name" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">-->
+<!--            </mat-form-field>-->
+<!--            <mat-autocomplete #auto="matAutocomplete">-->
+<!--              <mat-option *ngFor="let serie of series" [value]="serie">{{option}}</mat-option>-->
+<!--            </mat-autocomplete>-->
+<!--            <mat-form-field class="example-full-width">-->
+<!--              <input matInput placeholder="Year" [(ngModel)]="series.year" [ngModelOptions]="{standalone: true}">-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="example-full-width">-->
+<!--              <textarea matInput placeholder="Description" [(ngModel)]="series.description" [ngModelOptions]="{standalone: true}"> </textarea>-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="example-full-width">-->
+<!--              <input matInput placeholder="Url of a picture" [(ngModel)]="series.photo" [ngModelOptions]="{standalone: true}" (input)="displayPhoto()">-->
+<!--            </mat-form-field>-->
+<!--            <mat-card *ngIf="isUrl">-->
+<!--              <img [src]=series.photo>-->
+<!--            </mat-card>-->
+            <div cladd="Buttom">
               <button mat-button matStepperNext>Next</button>
             </div>
           </div>
@@ -35,13 +54,13 @@
 
       </mat-step>
 
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Rate</ng-template>
-          <app-rating [series2]="series"></app-rating>
-        </form>
-        <button mat-button matStepperNext (click)="calculateAvarage()">Next</button>
-      </mat-step>
+<!--      <mat-step [stepControl]="secondFormGroup">-->
+<!--        <form [formGroup]="secondFormGroup">-->
+<!--          <ng-template matStepLabel>Rate</ng-template>-->
+<!--          <app-rating [series2]="series"></app-rating>-->
+<!--        </form>-->
+<!--        <button mat-button matStepperNext (click)="calculateAvarage()">Next</button>-->
+<!--      </mat-step>-->
 
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
@@ -49,8 +68,9 @@
         <div>
           <button mat-button matStepperPrevious>Back</button>
         </div>
+<!--        <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="getSeries()">Get Series</button>-->
 
-        <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addSeries()">Upload</button>
+<!--        <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addSeries()">Upload</button>-->
 
       </mat-step>
     </mat-horizontal-stepper>

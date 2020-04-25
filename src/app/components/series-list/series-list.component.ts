@@ -24,28 +24,28 @@ export class SeriesListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getAllSeries();
+    // this.getAllSeries();
   }
-
+  //
   openAddSeries(): void {
     this.dialog.open(AddSeriesComponent, {}).afterClosed().subscribe(result => {
-      this.getAllSeries();
+      // this.getAllSeries();
     });
 
 
   }
 
-  async getAllSeries() {
-    this.dataSource.data = await this.seriesService.getAllSeries();
-  }
+  // async getAllSeries() {
+  //   this.dataSource.data = await this.seriesService.getAllSeries();
+  // }
 
-  async delete(series: Series) {
-
-    await this.seriesService.deleteSeriesById(series.id);
-    this.getAllSeries();
-  }
-
-  refresh() {
-    return this.getAllSeries();
-  }
+  // async delete(series: Series) {
+  //
+  //   await this.seriesService.deleteSeriesById(series.id);
+  //   this.getAllSeries();
+  // }
+  //
+  // refresh() {
+  //   return this.getAllSeries();
+  // }
 }
