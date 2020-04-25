@@ -1,0 +1,36 @@
+
+<div class="box">
+  <h4 mat-dialog-title>Log in</h4>
+  <div mat-dialog-content>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username" [formControl]="userFormControl"
+               [errorStateMatcher]="matcher">
+
+        <mat-error *ngIf="userFormControl.hasError('username') && !userFormControl.hasError('required')">
+          Please enter a valid username
+        </mat-error>
+        <mat-error *ngIf="userFormControl.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" [formControl]="passwordFormControl"
+             [errorStateMatcher]="matcher">
+
+      <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+        Please enter a valid password
+      </mat-error>
+      <mat-error *ngIf="passwordFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+      </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" type="submit" name="login" value="Login" >Login</button>
+    <button mat-raised-button  name="newaccount" value="Create an account" color="accent" style="margin: auto"> create account</button>
+  </div>
+
+</div>

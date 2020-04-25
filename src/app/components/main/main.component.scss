@@ -1,0 +1,26 @@
+@import "~src/styles";
+
+.router {
+  //background: white;
+  //overflow-y: scroll;
+  //padding: 0 8px;
+  //
+  ////height: calc(100vh - 80px);
+  //
+  //@include for-phone-only {
+  //  height: auto;
+  //  min-height: calc(50vh - 80px);
+  //}
+  position: absolute;
+
+  top: 0;
+
+  bottom: 0;
+  overflow: hidden;
+}
+
+.img
+{
+  width: 100%;
+  height: auto;
+}
