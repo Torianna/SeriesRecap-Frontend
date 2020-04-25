@@ -7,19 +7,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
 import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
   MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSlideToggleModule
+  MatSlideToggleModule, MatStepperModule, MatTableModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
 import { RatingModule } from 'ng-starrating';
 import { RatingComponent } from './components/rating/rating.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SeriesListComponent } from './components/series-list/series-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +36,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     LoginComponent,
     AddSeriesComponent,
     RatingComponent,
-    NavBarComponent
+    NavBarComponent,
+    SeriesListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,15 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     MatCardModule,
     MatIconModule,
     RatingModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatStepperModule,
+    HttpClientModule,
+    MatTableModule,
+    NgbModule,
+    MatAutocompleteModule,
+    NgxPaginationModule,
+    NgxPaginationModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,28 +1,26 @@
 @import "~src/styles";
 
-.container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.container > * {
-  width: 50%;
-  @include for-phone-only {
-    width: 100%;
-  }
-}
-
 .router {
-  background: white;
-  overflow-y: scroll;
-  padding: 0 8px;
+  //background: white;
+  //overflow-y: scroll;
+  //padding: 0 8px;
+  //
+  ////height: calc(100vh - 80px);
+  //
+  //@include for-phone-only {
+  //  height: auto;
+  //  min-height: calc(50vh - 80px);
+  //}
+  position: absolute;
 
-  height: calc(100vh - 80px);
+  top: 0;
 
-  @include for-phone-only {
-    height: auto;
-    min-height: calc(50vh - 80px);
-  }
+  bottom: 0;
+  overflow: hidden;
+}
+
+.img
+{
+  width: 100%;
+  height: auto;
 }
