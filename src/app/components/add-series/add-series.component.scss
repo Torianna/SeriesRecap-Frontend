@@ -23,10 +23,7 @@ mat-card{
   width: 200px;
 }
 
-img
-{
-  max-width: 100%;
-}
+
 .info
 {
   display: flex;
@@ -35,15 +32,38 @@ img
 
 
 
+.desc{
+  width: 100px;
+  bottom: 0px;
+}
 
 .flexWrap{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  max-width: 560px;
 }
 
 img{
   width:100px;
   padding: 5px;
+  max-height: 100px;
 
+}
+
+.element{
+
+  font-size:60%;
+  text-align:center;
+  height: 140px;
+  padding-bottom: 20px;
+
+  border: 1px solid #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+.element:hover {
+  border: 1px solid #777;
 }

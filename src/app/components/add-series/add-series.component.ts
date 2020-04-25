@@ -28,7 +28,7 @@ export class AddSeriesComponent implements OnInit {
               private formBuilder: FormBuilder) {
     this.series = [];
   }
-  
+
   // calculateAvarage() {
   //   console.log(this.series.totalScore);
   //   if (this.series.rate.ending === 0) {

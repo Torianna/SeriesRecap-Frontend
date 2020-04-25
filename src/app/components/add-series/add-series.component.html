@@ -16,35 +16,19 @@
               <button class="btn btn-primary btn">Search your Favourite Series</button>
             </form>
           <div class="flexWrap" >
-            <div *ngFor="let serie of this.series | paginate: { itemsPerPage: 10, currentPage: p }" >
+            <div *ngFor="let serie of this.series | paginate: { itemsPerPage: 10, currentPage: p }" style="padding: 5px">
+              <div class="element">
                 <img *ngIf="serie.image_thumbnail_path" class="thumbnail" src="{{serie.image_thumbnail_path}}">
-<!--                <div class="desc">-->
-<!--                  {{serie.name}}-->
-<!--                  {{serie.network}}-->
-<!--                </div>-->
+                <div class="desc">
+                  {{serie.name}}<br>
+                  {{serie.network}}
+                </div>
+              </div>
             </div>
           </div>
-            <pagination-controls autoHide="true" (pageChange)="p = $event"></pagination-controls>
+            <pagination-controls style="padding-top: 20px; " autoHide="true" (pageChange)="p = $event"></pagination-controls>
 
-<!--            <mat-form-field class="example-full-width">-->
-<!--              <input matInput placeholder="Name" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">-->
-<!--            </mat-form-field>-->
-<!--            <mat-autocomplete #auto="matAutocomplete">-->
-<!--              <mat-option *ngFor="let serie of series" [value]="serie">{{option}}</mat-option>-->
-<!--            </mat-autocomplete>-->
-<!--            <mat-form-field class="example-full-width">-->
-<!--              <input matInput placeholder="Year" [(ngModel)]="series.year" [ngModelOptions]="{standalone: true}">-->
-<!--            </mat-form-field>-->
-<!--            <mat-form-field class="example-full-width">-->
-<!--              <textarea matInput placeholder="Description" [(ngModel)]="series.description" [ngModelOptions]="{standalone: true}"> </textarea>-->
-<!--            </mat-form-field>-->
-<!--            <mat-form-field class="example-full-width">-->
-<!--              <input matInput placeholder="Url of a picture" [(ngModel)]="series.photo" [ngModelOptions]="{standalone: true}" (input)="displayPhoto()">-->
-<!--            </mat-form-field>-->
-<!--            <mat-card *ngIf="isUrl">-->
-<!--              <img [src]=series.photo>-->
-<!--            </mat-card>-->
-            <div cladd="Buttom">
+            <div class="Button">
               <button mat-button matStepperNext>Next</button>
             </div>
           </div>
