@@ -37,7 +37,7 @@
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Rate</ng-template>
-          <app-rating [series2]="series"></app-rating>
+          <app-rating [series2]="seriesObject"></app-rating>
         </form>
         <button mat-button matStepperNext (click)="calculateAvarage()">Next</button>
       </mat-step>
