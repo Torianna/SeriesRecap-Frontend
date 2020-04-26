@@ -12,7 +12,7 @@ export class RatingComponent implements OnInit {
   isEnded = false;
 
 
-  @Input() public series2: Series;
+  @Input() public series2: Series = new Series();
 
 
   constructor() {
@@ -26,12 +26,6 @@ export class RatingComponent implements OnInit {
   unblockOption() {
     this.isEnded = true;
   }
-
-  blockOption() {
-    this.isEnded = false;
-  }
-
-
 
   onBudget($event: { newValue: number; starRating: StarRatingComponent }) {
     this.series2.rate.budget = $event.newValue;

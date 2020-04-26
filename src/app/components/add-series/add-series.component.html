@@ -17,7 +17,7 @@
             </form>
           <div class="flexWrap" >
             <div *ngFor="let serie of this.series | paginate: { itemsPerPage: 10, currentPage: p }" style="padding: 5px">
-              <div class="element">
+              <div class="element" (click)="createObject(serie)" (click)="goForward(stepper)">
                 <img *ngIf="serie.image_thumbnail_path" class="thumbnail" src="{{serie.image_thumbnail_path}}">
                 <div class="desc">
                   {{serie.name}}<br>
@@ -27,10 +27,6 @@
             </div>
           </div>
             <pagination-controls style="padding-top: 20px; " autoHide="true" (pageChange)="p = $event"></pagination-controls>
-
-            <div class="Button">
-              <button mat-button matStepperNext>Next</button>
-            </div>
           </div>
 
 
@@ -38,13 +34,13 @@
 
       </mat-step>
 
-<!--      <mat-step [stepControl]="secondFormGroup">-->
-<!--        <form [formGroup]="secondFormGroup">-->
-<!--          <ng-template matStepLabel>Rate</ng-template>-->
-<!--          <app-rating [series2]="series"></app-rating>-->
-<!--        </form>-->
-<!--        <button mat-button matStepperNext (click)="calculateAvarage()">Next</button>-->
-<!--      </mat-step>-->
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Rate</ng-template>
+          <app-rating [series2]="series"></app-rating>
+        </form>
+        <button mat-button matStepperNext (click)="calculateAvarage()">Next</button>
+      </mat-step>
 
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
@@ -52,9 +48,9 @@
         <div>
           <button mat-button matStepperPrevious>Back</button>
         </div>
-<!--        <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="getSeries()">Get Series</button>-->
 
-<!--        <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addSeries()">Upload</button>-->
+
+        <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addSeries()">Upload</button>
 
       </mat-step>
     </mat-horizontal-stepper>

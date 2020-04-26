@@ -25,18 +25,23 @@ export class SeriesService {
     console.log(this.series + searchStr);
     return this.http.get(this.series + searchStr)
       .toPromise()
-       .then(this.handleData)
-       .catch(this.handleError);
+      .then(this.handleData)
+      .catch(this.handleError);
   }
 
   private handleData(res: any) {
     const body = res;
     console.log(body); // for development purposes only
-    return   body || { };
+    return body || {};
   }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for development purposes only
     return Promise.reject(error.message || error);
+  }
+
+  async getAllSeries() {
+    return await this.http.get<any[]>(this.url).toPromise();
   }
 
   async getSeries() {
