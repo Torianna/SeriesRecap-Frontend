@@ -2,9 +2,12 @@
   <a (click)="onLogOut($event)">LOG OUT</a>
 </div>
 <ng-template #login>
+  <h1 style="font-size: 4rem; color: white;">Series Recap</h1>
   <div class="buttons">
-    <a href="/series">TV Series</a>
-    <a (click)="onLogIn($event)">LOG IN</a>
+    <a (click)="openAddSeries()">Add</a>
+    <a href="/series">List</a>
+    <a href="/series">Share</a>
+    <a style="color: #FDB100;" (click)="onLogIn($event)">Sing in</a>
   </div>
 </ng-template>
 

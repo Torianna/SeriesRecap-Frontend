@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
+import { AddSeriesComponent } from '../add-series/add-series.component';
 
 @Component({
   selector: 'app-navbar',
@@ -30,4 +31,7 @@ export class NavBarComponent implements OnInit {
   //   this.open;
   //
   // }
+  openAddSeries(): void {
+    this.dialog.open(AddSeriesComponent, { panelClass: 'custom-dialog-container' });
+    }
 }

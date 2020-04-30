@@ -1,26 +1,82 @@
 @import "~src/styles";
 
 .router {
-  //background: white;
-  //overflow-y: scroll;
-  //padding: 0 8px;
-  //
-  ////height: calc(100vh - 80px);
-  //
-  //@include for-phone-only {
-  //  height: auto;
-  //  min-height: calc(50vh - 80px);
-  //}
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
   position: absolute;
 
   top: 0;
 
   bottom: 0;
   overflow: hidden;
+  //background-image: url("../../../assets/background.jpg");
+  //background-size: cover;
+  background: black;
 }
 
 .img
 {
   width: 100%;
   height: auto;
+}
+.dali h1{
+  text-align: center;
+  font-weight: 300;
+  padding-bottom: 10px;
+  color: #FDB100;
+}
+
+.dali{
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.dali img{
+  width: 450px;
+  height: 424px;
+
+}
+
+.slider{
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.333%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.333%);
+  }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{
+  transform: translateX(0);
 }

@@ -9,6 +9,8 @@ import { SeriesService } from '../../services/series.service';
 })
 export class MainComponent implements OnInit {
   series: Series[] = [];
+  presentSeries: boolean = false;
+
 
 
   constructor(private seriesService: SeriesService) {
@@ -18,11 +20,15 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.getAllSeries();
 
+
   }
 
   async getAllSeries() {
     this.series = await this.seriesService.getAllSeries();
     console.log(this.series.length);
+    this.presentSeries = true;
   }
-
 }
+
+
+

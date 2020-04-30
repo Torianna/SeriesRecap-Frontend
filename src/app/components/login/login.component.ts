@@ -30,4 +30,10 @@ export class LoginComponent {
 
   matcher = new MyErrorStateMatcher();
 
+  // openRegisterDialog (): void {
+  //   this.dialogRef.close()
+  //   this.dialog.open(RegistrationPanelComponent, {
+  //     width: '50vw'
+  //   })
+  // }
 }

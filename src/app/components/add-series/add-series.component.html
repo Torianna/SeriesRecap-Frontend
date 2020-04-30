@@ -11,7 +11,9 @@
           <div class="info">
             <ng-template matStepLabel>Fill out information about series</ng-template>
             <form (submit)="searchSeries()">
-              <input type="text" class="form-control" [(ngModel)]="searchStr" name="searchStr">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Type your series.." class="form-control" [(ngModel)]="searchStr" name="searchStr">
+              </mat-form-field>
               <br>
               <button class="btn btn-primary btn">Search your Favourite Series</button>
             </form>

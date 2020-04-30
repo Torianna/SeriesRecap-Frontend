@@ -5,17 +5,12 @@
   padding: 0 15px;
   align-items: center;
   flex-direction: row;
-  //padding: 10px;
-  height: 80px;
+  height: 150px;
 
-
-
-  @include mat-elevation(6);
 
   position: relative;
   top: 0;
   z-index: 2;
-  background: rgba(204, 204, 204, 0.5);
 }
 
 img {
@@ -25,18 +20,21 @@ img {
 }
 
 
+
+
 .buttons {
   margin-left: auto;
 
   a {
     margin: 0 10px;
-   // color: #FFCB9A;
-    padding: 1rem;
-    font-weight: 700;
+    color: white;
+    padding: 40px;
+
     border-radius: .5rem;
    // background-color: #116460;
     transition: .2s ease-in-out;
     cursor: pointer;
+    font-size: larger;
   }
 
   a:hover {
