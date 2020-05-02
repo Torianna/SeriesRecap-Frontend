@@ -1,36 +1,54 @@
-
-
-<button mat-raised-button color="primary" (click)="openAddSeries()">Add Series</button>
-
+<!--<button mat-raised-button color="primary" (click)="openAddSeries()">Add Series</button>-->
+<app-navbar (getAllSeries)="getAllSeries()"></app-navbar>
 <h4>Your series:</h4>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" align="center">
   <!-- Position Column -->
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <th mat-header-cell *matHeaderCellDef> no.</th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="photo">
+    <th mat-header-cell *matHeaderCellDef> photo</th>
+    <td mat-cell *matCellDef="let element">
+      <div *ngIf="element.id==1">
+        <img src="{{element.photo}}" style="width: 140px;">
+      </div>
+      <div *ngIf="element.id!=1">
+        <img src="{{element.photo}}" style="width: 100px;">
+      </div>
+
+    </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <th mat-header-cell *matHeaderCellDef> name</th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="score">
+    <th mat-header-cell *matHeaderCellDef> avarage rate</th>
+    <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+  </ng-container>
+
   <ng-container matColumnDef="totalScore">
-    <th mat-header-cell *matHeaderCellDef> Rate </th>
+    <th mat-header-cell *matHeaderCellDef> your rate</th>
     <td mat-cell *matCellDef="let element"> {{element.totalScore}} </td>
   </ng-container>
 
+
   <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef></th>
+    <th mat-header-cell *matHeaderCellDef> actions</th>
     <td mat-cell *matCellDef="let row">
-      <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn" style="position: relative; float: right;">
+      <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn"
+              style="position: relative; float: right;">
         <mat-icon aria-label="Delete" (click)="delete(row)">delete</mat-icon>
       </button>
     </td>
   </ng-container>
-
 
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

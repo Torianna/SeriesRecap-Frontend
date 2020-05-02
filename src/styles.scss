@@ -32,6 +32,7 @@ html, body {
   height: 100%;
   min-height: 100vh;
   width: 100%;
+  background-color: black;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -45,35 +46,39 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   box-sizing: border-box;
 }
 
-.custom-dialog-container .mat-dialog-container {
+.mat-dialog-container {
   background-color: black;
   border: 1px solid #FDB100;
-  color: white;
+  color: white !important;
 }
-::ng-deep .mat-step-header .mat-step-icon-selected {
+ .mat-step-header .mat-step-icon-selected {
   background-color: red !important;
-  color: white;
+  color: white !important;
 }
 
-::ng-deep .mat-step-header .mat-step-icon {
+ .mat-step-header .mat-step-icon {
   background-color: #FDB100;
-  color: white;
+  color: white !important;
 }
 
-::ng-deep .mat-step-header {
+ .mat-step-header {
   background-color: black!important;
 }
 
-::ng-deep .mat-step-header .mat-stepper-vertical-line{
+ .mat-cell{
+   color: red !important;
+ }
+
+.mat-step-header .mat-stepper-vertical-line{
   color: white !important;
 }
 
 
-mat-step-header .mat-step-label{
+ .mat-step-header .mat-step-label{
   color: white !important;
 }
 
-::ng-deep .mat-step-label .mat-step-label-active .mat-step-label-selected{
+ .mat-step-label .mat-step-label-active .mat-step-label-selected{
   color: white;
 }
 
@@ -81,23 +86,22 @@ mat-step-header .mat-step-label{
   background-color: black !important;
 }
 
-::ng-deep .mat-focused .mat-form-field-label {
+ .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: #FDB100 !important;
   caret-color: #FDB100 !important;
 }
 
-::ng-deep.mat-form-field-underline {
+.mat-form-field-underline {
   /*change color of underline*/
   background-color: #FDB100 !important;
 }
 
-::ng-deep.mat-form-field-ripple {
+.mat-form-field-ripple {
   /*change color of underline when focused*/
   background-color: #FDB100 !important;;
 }
-
-::ng-deep .mat-form-field-placeholder{
+ .mat-form-field-placeholder{
 
   color: #FDB100!important;
 }
@@ -110,11 +114,11 @@ mat-step-header .mat-step-label{
   background-color: black !important;
 }
 
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+ .mat-form-field-appearance-outline .mat-form-field-outline {
   color: red!important;
   // opacity: 1!important;
 }
 // mat-input carent color
-::ng-deep .mat-input-element {
+ .mat-input-element {
   caret-color: #FDB100!important;
 }

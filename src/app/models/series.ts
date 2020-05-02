@@ -8,4 +8,5 @@ export class Series {
   description: string;
   rate: Rates;
   totalScore: number;
+  score: number;
 }

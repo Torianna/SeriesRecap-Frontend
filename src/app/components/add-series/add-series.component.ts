@@ -39,7 +39,9 @@ export class AddSeriesComponent implements OnInit {
         ending: 0,
         totalScore: 0
       },
-      totalScore: 0
+      totalScore: 0,
+      score: 0
+
 
     };
 
@@ -71,23 +73,16 @@ export class AddSeriesComponent implements OnInit {
   }
 
   async searchSeries() {
-    // this.service.searchSeries(this.searchStr).then(res => {
-    //   this.searchRes = res.result;
-    // });
-    // console.log(this.searchRes);
     this.searchRes = await this.service.searchSeries(this.searchStr);
-
-
     for (const tv_show of this.searchRes.tv_shows) {
-      console.log(tv_show);
       this.series.push(tv_show);
     }
-
-
   }
 
+
+
+
   async addSeries() {
-    console.log(this.seriesObject);
     this.service.addSeries(this.seriesObject)
       .then(() => {
         this.dialogRef.close();
@@ -99,12 +94,13 @@ export class AddSeriesComponent implements OnInit {
   }
 
 
-  createObject(serie: any) {
-    console.log('create obejct + ' + serie);
+  async createObject(serie: any) {
+    this.searchRes = await this.service.getSeriesById(serie.id);
     this.seriesObject.name = serie.name;
     this.seriesObject.description = serie.network;
     this.seriesObject.year = serie.start_date;
-    this.seriesObject.photo = serie.image_thumbnail_path;
+    this.seriesObject.photo = this.searchRes.tvShow.image_path;
+    this.seriesObject.score = this.searchRes.tvShow.rating;
     console.log(JSON.stringify(this.seriesObject));
 
   }

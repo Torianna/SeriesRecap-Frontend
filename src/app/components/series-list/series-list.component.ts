@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { AddSeriesComponent } from '../add-series/add-series.component';
 import { MatDialog, MatSort, MatTable, MatTableDataSource } from '@angular/material';
 import { SeriesService } from '../../services/series.service';
@@ -15,9 +15,7 @@ export class SeriesListComponent implements OnInit {
 
   dataSource = new MatTableDataSource(this.series);
 
-
-
-  displayedColumns: string[] = ['id', 'name', 'totalScore', 'actions'];
+  displayedColumns: string[] = ['id', 'photo', 'name', 'score', 'totalScore', 'actions'];
 
   constructor(public dialog: MatDialog, private seriesService: SeriesService) {
   }
@@ -26,17 +24,11 @@ export class SeriesListComponent implements OnInit {
   ngOnInit() {
      this.getAllSeries();
   }
-  //
-  openAddSeries(): void {
-    this.dialog.open(AddSeriesComponent, {}).afterClosed().subscribe(result => {
-       this.getAllSeries();
-    });
 
-
-  }
 
   async getAllSeries() {
-    this.dataSource.data = await this.seriesService.getAllSeries();
+
+   this.dataSource.data = await this.seriesService.getAllSeries();
   }
 
   async delete(series: Series) {
@@ -45,7 +37,4 @@ export class SeriesListComponent implements OnInit {
     this.getAllSeries();
   }
 
-  refresh() {
-    return this.getAllSeries();
-  }
 }

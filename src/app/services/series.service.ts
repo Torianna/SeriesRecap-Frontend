@@ -12,9 +12,8 @@ export class SeriesService {
   searchStr: string;
 
   private series = 'https://www.episodate.com/api/search?q=';
-
-
   private url = `http://localhost:8080/seriesRecap/series`;
+  private details = 'https://www.episodate.com/api/show-details?q=';
 
 
   constructor(private http: HttpClient) {
@@ -22,12 +21,19 @@ export class SeriesService {
 
 
   searchSeries(searchStr: string): Promise<any> {
-    console.log(this.series + searchStr);
     return this.http.get(this.series + searchStr)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError);
   }
+
+  getSeriesById(id: number): Promise<any> {
+    return this.http.get(this.details + id)
+      .toPromise()
+      .then(this.handleData)
+      .catch(this.handleError);
+  }
+
 
   private handleData(res: any) {
     const body = res;

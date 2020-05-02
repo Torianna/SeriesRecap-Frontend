@@ -5,5 +5,19 @@ mat-drawer-container {
 
 
 table {
-  width: 100%;
+  width: 90%;
+}
+.body{
+  background-color: black;
+}
+
+.mat-cell, .mat-header-cell {
+  color: white;
+  border: 1px solid #FDB100;
+  text-align:center;
+}
+
+.mat-table{
+  background-color: black;
+  border: 1px solid #FDB100;
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 import { AddSeriesComponent } from '../add-series/add-series.component';
+import { SeriesService } from '../../services/series.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +11,11 @@ import { AddSeriesComponent } from '../add-series/add-series.component';
 })
 export class NavBarComponent implements OnInit {
   localStorage: Storage = localStorage;
+  data: any;
 
-  constructor(public dialog: MatDialog) {
+  @Output() getAllSeries = new EventEmitter();
+
+  constructor(public dialog: MatDialog, private seriesService: SeriesService) {
   }
 
   ngOnInit() {
@@ -31,7 +35,13 @@ export class NavBarComponent implements OnInit {
   //   this.open;
   //
   // }
+  // openAddSeries(): void {
+  //   this.dialog.open(AddSeriesComponent, { panelClass: 'custom-dialog-container' });
+  //   }
+
   openAddSeries(): void {
-    this.dialog.open(AddSeriesComponent, { panelClass: 'custom-dialog-container' });
-    }
+    this.dialog.open(AddSeriesComponent, {}).afterClosed().subscribe(result => {
+      this.getAllSeries.emit();
+    });
+  }
 }
