@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Series } from '../models/series';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,18 +13,9 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
+  addUser (user: User) {
+    return this.http.post<User>(this.url, user).toPromise()
+  }
 
 
-  // async getSeries() {
-  //
-  //   return await this.http.get<any[]>(this.series).toPromise();
-  // }
-  //
-  // addSeries(series: Series) {
-  //   return this.http.post<Series>(this.url, series).toPromise();
-  // }
-  //
-  // deleteSeriesById(id: number) {
-  //   return this.http.delete(`${ this.url }/${ id }`).toPromise();
-  // }
 }
