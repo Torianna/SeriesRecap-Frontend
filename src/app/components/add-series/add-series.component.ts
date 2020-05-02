@@ -55,9 +55,9 @@ export class AddSeriesComponent implements OnInit {
   calculateAvarage() {
     console.log(this.seriesObject.totalScore);
     if (this.seriesObject.rate.ending === 0) {
-      this.seriesObject.totalScore = this.seriesObject.rate.totalScore / 3;
+      this.seriesObject.totalScore = (this.seriesObject.rate.totalScore * 2) / 3;
     } else if (this.seriesObject.rate.ending !== 0) {
-      this.seriesObject.totalScore = this.seriesObject.rate.totalScore / 4;
+      this.seriesObject.totalScore = (this.seriesObject.rate.totalScore * 2) / 4;
     }
     console.log(this.seriesObject.totalScore);
   }
@@ -78,8 +78,6 @@ export class AddSeriesComponent implements OnInit {
       this.series.push(tv_show);
     }
   }
-
-
 
 
   async addSeries() {

@@ -51,34 +51,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border: 1px solid #FDB100;
   color: white !important;
 }
- .mat-step-header .mat-step-icon-selected {
+.mat-step-header .mat-step-icon-selected {
   background-color: red !important;
   color: white !important;
 }
 
- .mat-step-header .mat-step-icon {
+.mat-step-header .mat-step-icon {
   background-color: #FDB100;
   color: white !important;
 }
 
- .mat-step-header {
+.mat-step-header {
   background-color: black!important;
 }
 
- .mat-cell{
-   color: red !important;
- }
+.mat-cell{
+  color: red !important;
+}
 
 .mat-step-header .mat-stepper-vertical-line{
   color: white !important;
 }
 
 
- .mat-step-header .mat-step-label{
+.mat-step-header .mat-step-label{
   color: white !important;
 }
 
- .mat-step-label .mat-step-label-active .mat-step-label-selected{
+.mat-step-label .mat-step-label-active .mat-step-label-selected{
   color: white;
 }
 
@@ -86,7 +86,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: black !important;
 }
 
- .mat-focused .mat-form-field-label {
+.mat-focused .mat-form-field-label {
   /*change color of label*/
   color: #FDB100 !important;
   caret-color: #FDB100 !important;
@@ -101,7 +101,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   /*change color of underline when focused*/
   background-color: #FDB100 !important;;
 }
- .mat-form-field-placeholder{
+.mat-form-field-placeholder{
 
   color: #FDB100!important;
 }
@@ -114,11 +114,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: black !important;
 }
 
- .mat-form-field-appearance-outline .mat-form-field-outline {
+.mat-form-field-appearance-outline .mat-form-field-outline {
   color: red!important;
   // opacity: 1!important;
 }
 // mat-input carent color
- .mat-input-element {
+.mat-input-element {
   caret-color: #FDB100!important;
 }
+

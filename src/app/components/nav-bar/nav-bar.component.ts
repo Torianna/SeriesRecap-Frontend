@@ -31,14 +31,6 @@ export class NavBarComponent implements OnInit {
     localStorage.removeItem('username');
   }
 
-  // onSeriesList($event: Event) {
-  //   this.open;
-  //
-  // }
-  // openAddSeries(): void {
-  //   this.dialog.open(AddSeriesComponent, { panelClass: 'custom-dialog-container' });
-  //   }
-
   openAddSeries(): void {
     this.dialog.open(AddSeriesComponent, {}).afterClosed().subscribe(result => {
       this.getAllSeries.emit();

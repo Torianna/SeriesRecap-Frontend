@@ -1,30 +1,100 @@
 .box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 8px;
+  border:1px solid #FDB100;
+  width: 40%;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  background-color: #FDB100;
+  border-radius: 10px;
 }
 
-.box h4 {
+h1{
+  color: white;
+  font-size: 4rem !important;
+}
+
+.left{
+  width: 50%;
   text-align: center;
-  font-family: verdana;
-  text-transform: uppercase;
-  letter-spacing: 3px;
 }
 
-.mat-dialog-content
+
+.login
 {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  width: 80%;
 }
-
 .box input[name="newaccount"] {
   border: 0;
   text-align: end;
 }
 
+
+.background{
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  align-items: center;
+}
+
 button{
-  width: 100%;
-  margin-bottom: 4px;
+  width: 100% !important;
+  min-width: unset!important;
+  color: red;
+  margin-bottom:20px;
+  height: 50px;
+}
+.mat-form-field{
+  margin-bottom: 40px;
+}
+
+.mat-dialog-actions{
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.registration{
+  color: black;
+}
+.registration :hover{
+  color: black;
+  text-decoration: underline;
+}
+
+:host ::ng-deep  .mat-form-field-underline  {
+  /*change color of underline*/
+  background-color: black !important;
+}
+
+:host ::ng-deep  .mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: black !important;;
+}
+:host ::ng-deep  .mat-form-field-placeholder{
+
+  color: black !important;
+}
+
+:host ::ng-deep  .mat-form-field-label {
+  color: black !important;
+}
+
+:host ::ng-deep  .mat-input-element{
+  background-color: #FDB100 !important;
+}
+
+:host ::ng-deep  .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: red!important;
+  // opacity: 1!important;
+}
+// mat-input carent color
+:host ::ng-deep  .mat-input-element {
+  caret-color: black!important;
 }
