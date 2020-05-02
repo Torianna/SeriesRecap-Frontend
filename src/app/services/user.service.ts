@@ -13,8 +13,8 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  addUser (user: User) {
-    return this.http.post<User>(this.url, user).toPromise()
+  addUser(user: User) {
+    return this.http.post<User>(this.url, user).toPromise();
   }
 
 

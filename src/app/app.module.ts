@@ -25,6 +25,8 @@ import { SeriesListComponent } from './components/series-list/series-list.compon
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { RegistrationComponent } from './components/registration/registration.component';
+
 
 
 
@@ -38,7 +40,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddSeriesComponent,
     RatingComponent,
     NavBarComponent,
-    SeriesListComponent
+    SeriesListComponent,
+    RegistrationComponent
 
   ],
   imports: [

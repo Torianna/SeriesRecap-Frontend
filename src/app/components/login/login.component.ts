@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher, MatDialog, MatDialogRef } from '@angular/material';
+import { ErrorStateMatcher } from '@angular/material';
 
 class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -15,25 +15,31 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  @ViewChild('username', { static: false }) username: { nativeElement: HTMLInputElement }
-  @ViewChild('password', { static: false }) password: { nativeElement: HTMLInputElement }
+  @ViewChild('username', { static: false }) username: { nativeElement: HTMLInputElement };
+  @ViewChild('password', { static: false }) password: { nativeElement: HTMLInputElement };
 
-  constructor() { }
+  constructor() {
+  }
+
   userFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
+    Validators.email
   ]);
   passwordFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
+    Validators.email
   ]);
 
   matcher = new MyErrorStateMatcher();
 
-  // openRegisterDialog (): void {
-  //   this.dialogRef.close()
-  //   this.dialog.open(RegistrationPanelComponent, {
-  //     width: '50vw'
-  //   })
-  // }
+  async tryLogin() {
+
+    const username = this.username.nativeElement.value;
+    const password = this.password.nativeElement.value;
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+
+  }
+
+
 }

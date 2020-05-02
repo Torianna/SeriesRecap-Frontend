@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="background">
+  <div class="left">
+    <h1>Join the fun.</h1>
+  </div>
+  <div class="box">
+    <h4>Registration</h4>
+    <div class="login">
+
+      <mat-form-field class="username">
+        <input matInput placeholder="Username" [formControl]="userFormControl"
+               [errorStateMatcher]="matcher">
+
+        <mat-error *ngIf="userFormControl.hasError('username') && !userFormControl.hasError('required')">
+          Please enter a valid username
+        </mat-error>
+        <mat-error *ngIf="userFormControl.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="password">
+        <input matInput placeholder="Password" [formControl]="passwordFormControl"
+               [errorStateMatcher]="matcher">
+
+        <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+          Please enter a valid password
+        </mat-error>
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <div mat-dialog-actions>
+        <button mat-raised-button color="warn" type="submit" name="login" value="Login" (click)="addUser()" >Join now</button>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+

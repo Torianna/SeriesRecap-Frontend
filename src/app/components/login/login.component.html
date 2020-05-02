@@ -32,8 +32,8 @@
       </mat-form-field>
 
     <div mat-dialog-actions>
-      <button mat-raised-button color="warn" type="submit" name="login" value="Login" >Join now</button>
-      <a class="registration" href="/registration">I have an account..</a>
+      <button mat-raised-button color="warn" type="submit" name="login" value="Login" (click)="tryLogin()">Sign in</button>
+      <a class="registration" href="/registration">I don't have an account..</a>
 
     </div>
 

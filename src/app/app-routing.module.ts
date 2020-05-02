@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { SeriesListComponent } from './components/series-list/series-list.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+
 
 
 
@@ -28,6 +30,10 @@ const routes: Routes = [
   {
     path: 'addSeries',
     component: AddSeriesComponent
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent
   },
   {
     path: '',
