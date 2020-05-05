@@ -1,5 +1,154 @@
 @import "~src/styles";
 
+
+@media (max-width : 767px){
+  .ngb-carousel-head-div-mobile{
+    display : block !important;
+  }
+  .ngb-carousel-head-div{
+    display : none !important;
+  }
+  .img-carousel-innerslide{
+    width: 50% !important;
+  }
+  .div-containing-rating-star
+  {
+    left: 24% !important;
+  }
+  .div-containing-id-circle
+  {
+    left: -24% !important;
+  }
+}
+
+@media (min-width : 767px){
+  .ngb-carousel-head-div-mobile{
+    display : none !important;
+  }
+  .ngb-carousel-head-div{
+    display : block !important;
+  }
+}
+
+.div-containing-id-circle{
+  position: relative;
+  display: inline-block;
+  top: 28px;
+  left: -47%;
+}
+.span-circle-for-id{
+  height: 35px;
+  width: 35px;
+  background-color: #dc3545;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  float: left;
+  z-index: 200;
+  padding-top: 5px;
+  font-weight: bold;
+}
+.div-containing-rating-star{
+  position: relative;
+  display: inline-block;
+  bottom: 128px;
+  left: 48%;
+  z-index: 200;
+  text-align:center;
+}
+
+.span-star-for-rating {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: .9em;
+  margin-right: .9em;
+  border-right:  .3em solid transparent;
+  border-bottom: .7em  solid #FC0;
+  border-left:   .3em solid transparent;
+
+  /* Controlls the size of the stars. */
+  font-size: 27px;
+
+  &:before, &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: .6em;
+    left: -1em;
+    border-right:  1em solid transparent;
+    border-bottom: .7em  solid #FC0;
+    border-left:   1em solid transparent;
+    transform: rotate(-35deg);
+  }
+
+  &:after {
+    transform: rotate(35deg);
+  }
+}
+.span-text-for-rating{
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  width: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 1000;
+  top: 15px;
+  left: 19px;
+}
+
+.carousel-div-image-parent{
+  position: relative;
+  display : block;
+}
+.div-carousel-container-head{
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  position: relative;
+  height: inherit;
+  margin:4%
+}
+
+.div-carousel-innerhtml{
+  height: 34%;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.img-carousel-innerslide{
+  object-fit: contain;
+  width: 100%;
+  height: 200px;
+}
+
+.carousel-caption{
+  position: relative;
+  bottom: 10px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  left:0;
+}
+
+.ngb-carousel-head-div {
+  text-align:center;
+}
+
+
+
+
+
 .router {
   display: flex;
 
