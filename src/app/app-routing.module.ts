@@ -6,6 +6,7 @@ import { AddSeriesComponent } from './components/add-series/add-series.component
 import { RatingComponent } from './components/rating/rating.component';
 import { SeriesListComponent } from './components/series-list/series-list.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { PosterComponent } from './components/poster/poster.component';
 
 
 
@@ -36,8 +37,12 @@ const routes: Routes = [
     component: RegistrationComponent
   },
   {
+    path: 'poster',
+    component: PosterComponent
+  },
+  {
     path: '',
-    redirectTo: 'main',
+    redirectTo: 'poster',
     pathMatch: 'full'
   }
 ];

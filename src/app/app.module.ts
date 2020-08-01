@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { PosterComponent } from './components/poster/poster.component';
 
 
 
@@ -41,7 +42,8 @@ import { RegistrationComponent } from './components/registration/registration.co
     RatingComponent,
     NavBarComponent,
     SeriesListComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    PosterComponent
 
   ],
   imports: [
