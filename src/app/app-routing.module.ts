@@ -7,6 +7,7 @@ import { RatingComponent } from './components/rating/rating.component';
 import { SeriesListComponent } from './components/series-list/series-list.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
+import { DiscoverComponent } from './components/discover/discover.component';
 
 
 
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'addSeries',
     component: AddSeriesComponent
+  },
+  {
+    path: 'discover',
+    component: DiscoverComponent
   },
   {
     path: 'registration',

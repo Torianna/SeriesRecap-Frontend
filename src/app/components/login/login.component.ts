@@ -36,8 +36,6 @@ export class LoginComponent {
 
     const username = this.username.nativeElement.value;
     const password = this.password.nativeElement.value;
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', password);
 
   }
 

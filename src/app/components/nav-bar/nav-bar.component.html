@@ -2,15 +2,25 @@
   <a (click)="onLogOut($event)">LOG OUT</a>
 </div>
 <ng-template #login>
-  <img src="../../../assets/logo.png" alt="logo" class="logo" >
-  <div class="buttons">
-    <a (click)="openAddSeries()">Add</a>
-    <a href="/series">List</a>
-    <a href="/series">Share</a>
-    <a style="color: #FDB100;" href="/login">Sign in</a>
-  </div>
-
+    <ng-container *ngIf="this.signin">
+      <a href="/" >
+        <img src="../../../assets/logo.png" alt="logo" class="logo">
+      </a>
+      <div class="buttons">
+        <a (click)="openAddSeries()">Add</a>
+        <a href="/series">List</a>
+        <a href="/series">Share</a>
+        <a style="color: #FDB100;" href="/login">Sign in</a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!this.signin" >
+      <a href="/poster">
+        <img src="../../../assets/logo.png" alt="logo" class="logo">
+      </a>
+      <div class="buttons">
+        <a href="/discover" style="color: red">Discover</a>
+        <a href="/registration" style="color: red">Join</a>
+      </div>
+    </ng-container>
 </ng-template>
-
-
 

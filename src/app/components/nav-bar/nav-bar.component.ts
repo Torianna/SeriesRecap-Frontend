@@ -12,6 +12,7 @@ import { SeriesService } from '../../services/series.service';
 export class NavBarComponent implements OnInit {
   localStorage: Storage = localStorage;
   data: any;
+  signin: boolean = false;
 
   @Output() getAllSeries = new EventEmitter();
 

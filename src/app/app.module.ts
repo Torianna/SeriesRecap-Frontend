@@ -27,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
+import { DiscoverComponent } from './components/discover/discover.component';
 
 
 
@@ -43,7 +44,8 @@ import { PosterComponent } from './components/poster/poster.component';
     NavBarComponent,
     SeriesListComponent,
     RegistrationComponent,
-    PosterComponent
+    PosterComponent,
+    DiscoverComponent
 
   ],
   imports: [
