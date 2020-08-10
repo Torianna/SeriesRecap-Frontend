@@ -6,8 +6,6 @@
   align-items: center;
   flex-direction: row;
   height: 150px;
-
-
   position: relative;
   top: 0;
   z-index: 2;
@@ -15,10 +13,7 @@
 
 img {
   height: 80px;
-
-
 }
-
 
 .buttons {
   margin-left: auto;
@@ -27,16 +22,10 @@ img {
     margin: 0 10px;
     color: white;
     padding: 40px;
-
     border-radius: .5rem;
-   // background-color: #116460;
     transition: .2s ease-in-out;
     cursor: pointer;
     font-size: larger;
-  }
-
-  a:hover {
-    //background-color: #11928e;
   }
 }
 
