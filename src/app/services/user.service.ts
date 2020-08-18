@@ -17,5 +17,7 @@ export class UserService {
     return this.http.post<User>(this.url, user).toPromise();
   }
 
-
+  async getUsers() {
+    return await this.http.get<any[]>(this.url).toPromise();
+  }
 }

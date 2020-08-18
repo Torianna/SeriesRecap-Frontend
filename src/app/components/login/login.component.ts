@@ -1,6 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
+import { Router } from '@angular/router';
 
 class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -15,10 +18,16 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  @ViewChild('username', { static: false }) username: { nativeElement: HTMLInputElement };
-  @ViewChild('password', { static: false }) password: { nativeElement: HTMLInputElement };
 
-  constructor() {
+  user: User = {
+    id: 0,
+    userName: '',
+    password: ''
+  };
+
+  tempArrayofUser: Array<User>;
+  constructor(private service: UserService,  private router: Router ) {
+    localStorage.setItem('login', 'false');
   }
 
   userFormControl = new FormControl('', [
@@ -33,10 +42,14 @@ export class LoginComponent {
   matcher = new MyErrorStateMatcher();
 
   async tryLogin() {
+    this.tempArrayofUser = await this.service.getUsers();
+    const foundName = this.tempArrayofUser.find(t => t.userName === this.user.userName);
+    const foundPassword = this.tempArrayofUser.find(t => t.password === this.user.password);
 
-    const username = this.username.nativeElement.value;
-    const password = this.password.nativeElement.value;
-
+    if (foundName && foundPassword) {
+      localStorage.setItem('login', 'true');
+       await this.router.navigate(['/main']);
+    }
   }
 
 
