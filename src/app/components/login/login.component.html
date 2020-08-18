@@ -20,7 +20,7 @@
       </mat-form-field>
 
         <mat-form-field class="password">
-      <input matInput placeholder="Password" [formControl]="passwordFormControl"
+      <input type="password" matInput placeholder="Password" [formControl]="passwordFormControl"
              [errorStateMatcher]="matcher">
 
       <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">

@@ -7,7 +7,7 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  private url = `http://localhost:8080/seriesRecap/user`;
+  private url = `http://localhost:8080/seriesRecap/users`;
 
 
   constructor(private http: HttpClient) {

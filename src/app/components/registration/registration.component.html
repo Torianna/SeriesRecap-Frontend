@@ -8,7 +8,7 @@
     <div class="login">
 
       <mat-form-field class="username">
-        <input matInput placeholder="Username" [formControl]="userFormControl"
+        <input matInput placeholder="Username" [formControl]="userFormControl" [(ngModel)]="this.user.userName"
                [errorStateMatcher]="matcher">
 
         <mat-error *ngIf="userFormControl.hasError('username') && !userFormControl.hasError('required')">
@@ -20,7 +20,7 @@
       </mat-form-field>
 
       <mat-form-field class="password">
-        <input matInput placeholder="Password" [formControl]="passwordFormControl"
+        <input type="password" matInput placeholder="Password" [formControl]="passwordFormControl" [(ngModel)]="this.user.password"
                [errorStateMatcher]="matcher">
 
         <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">

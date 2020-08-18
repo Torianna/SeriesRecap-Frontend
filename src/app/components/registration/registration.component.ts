@@ -3,6 +3,8 @@ import { ErrorStateMatcher } from '@angular/material';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
+import * as uuid from 'uuid';
+import { Router } from '@angular/router';
 
 class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -25,7 +27,7 @@ export class RegistrationComponent implements OnInit {
     password: ''
   };
 
-  constructor(private service: UserService) {
+  constructor(private service: UserService, private router: Router ) {
   }
 
   userFormControl = new FormControl('', [
@@ -43,7 +45,12 @@ export class RegistrationComponent implements OnInit {
   }
 
   async addUser() {
-    console.log(this.user);
-    this.service.addUser(this.user);
+    this.service.addUser(this.user).then(() => {
+      this.router.navigate(['/login']);
+    })
+      .catch(err => {
+        alert('Something went wrong');
+        console.error(err);
+      });
   }
 }
