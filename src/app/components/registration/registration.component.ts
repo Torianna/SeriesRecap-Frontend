@@ -24,7 +24,8 @@ export class RegistrationComponent implements OnInit {
   user: User = {
     id: 0,
     userName: '',
-    password: ''
+    password: '',
+    series: []
   };
 
   constructor(private service: UserService, private router: Router ) {
@@ -46,6 +47,7 @@ export class RegistrationComponent implements OnInit {
 
   async addUser() {
     this.service.addUser(this.user).then(() => {
+      localStorage.setItem('user', JSON.stringify(this.user));
       this.router.navigate(['/login']);
     })
       .catch(err => {

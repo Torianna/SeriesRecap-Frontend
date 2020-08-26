@@ -1,4 +1,5 @@
 import { Rates } from './rates';
+import { User } from './user';
 
 export class Series {
   id: number;
@@ -9,4 +10,5 @@ export class Series {
   rate: Rates;
   totalScore: number;
   score: number;
+  user: User;
 }

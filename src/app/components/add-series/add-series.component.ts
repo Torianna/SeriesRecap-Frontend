@@ -3,6 +3,8 @@ import { SeriesService } from '../../services/series.service';
 import { MatDialogRef, MatHorizontalStepper } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Series } from '../../models/series';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-add-series',
@@ -24,6 +26,7 @@ export class AddSeriesComponent implements OnInit {
   series: any;
   searchRes: any;
   searchStr: any;
+  users: [];
 
   seriesObject: Series =
     {
@@ -40,13 +43,13 @@ export class AddSeriesComponent implements OnInit {
         totalScore: 0
       },
       totalScore: 0,
-      score: 0
-
-
+      score: 0,
+      user: null
     };
 
 
   constructor(private service: SeriesService,
+              private user: UserService,
               private dialogRef: MatDialogRef<AddSeriesComponent>,
               private formBuilder: FormBuilder) {
     this.series = [];
@@ -99,6 +102,7 @@ export class AddSeriesComponent implements OnInit {
     this.seriesObject.year = serie.start_date;
     this.seriesObject.photo = this.searchRes.tvShow.image_path;
     this.seriesObject.score = this.searchRes.tvShow.rating;
+    this.seriesObject.user = JSON.parse(localStorage.getItem('user'));
     console.log(JSON.stringify(this.seriesObject));
 
   }

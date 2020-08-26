@@ -9,26 +9,24 @@ import { SeriesService } from '../../services/series.service';
 })
 export class MainComponent implements OnInit {
   series: Series[] = [];
-  presentSeries: boolean = false;
-  seriesFormattedForCarousel : Series[][] = new Array();
+  presentSeries = false;
+  seriesFormattedForCarousel: Series[][] = new Array();
 
   constructor(private seriesService: SeriesService) {
 
   }
 
-  alignSeriesAccordingToCarousel(){
-    var j = -1;
-    for (var i = 0; i < this.series.length; i++) {
-      if (i % 3 == 0) {
+  alignSeriesAccordingToCarousel() {
+    let j = -1;
+    for (let i = 0; i < this.series.length; i++) {
+      if (i % 3 === 0) {
         j++;
         this.seriesFormattedForCarousel[j] = [];
         this.seriesFormattedForCarousel[j].push(this.series[i]);
-      }
-      else {
+      } else {
         this.seriesFormattedForCarousel[j].push(this.series[i]);
       }
     }
-
   }
 
   ngOnInit() {
@@ -36,7 +34,8 @@ export class MainComponent implements OnInit {
   }
 
   async getAllSeries() {
-    this.series = await this.seriesService.getAllSeries();
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.series = await this.seriesService.getAllSeries(user);
 
     console.log(this.series.length);
     this.presentSeries = true;

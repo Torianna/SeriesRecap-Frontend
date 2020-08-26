@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Series } from '../models/series';
+import { User } from '../models/user';
 
 
 @Injectable({
@@ -46,7 +47,7 @@ export class SeriesService {
     return Promise.reject(error.message || error);
   }
 
-  async getAllSeries() {
+  async getAllSeries(userId: number) {
     return await this.http.get<any[]>(this.url).toPromise();
   }
 

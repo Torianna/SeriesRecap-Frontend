@@ -4,6 +4,7 @@ import { ErrorStateMatcher } from '@angular/material';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
+import { Series } from '../../models/series';
 
 class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -22,7 +23,8 @@ export class LoginComponent {
   user: User = {
     id: 0,
     userName: '',
-    password: ''
+    password: '',
+    series: []
   };
 
   tempArrayofUser: Array<User>;
@@ -48,7 +50,7 @@ export class LoginComponent {
 
     if (foundName && foundPassword) {
       localStorage.setItem('login', 'true');
-       await this.router.navigate(['/main']);
+      await this.router.navigate(['/main']);
     }
   }
 

@@ -20,4 +20,6 @@ export class UserService {
   async getUsers() {
     return await this.http.get<any[]>(this.url).toPromise();
   }
+
+
 }
