@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Series } from '../../models/series';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-series',
@@ -51,7 +52,8 @@ export class AddSeriesComponent implements OnInit {
   constructor(private service: SeriesService,
               private user: UserService,
               private dialogRef: MatDialogRef<AddSeriesComponent>,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private router: Router ) {
     this.series = [];
   }
 
@@ -87,9 +89,9 @@ export class AddSeriesComponent implements OnInit {
     this.service.addSeries(this.seriesObject)
       .then(() => {
         this.dialogRef.close();
+        this.router.navigate(['/main']);
       })
       .catch(err => {
-        alert('Something went wrong');
         console.error(err);
       });
   }
@@ -103,7 +105,6 @@ export class AddSeriesComponent implements OnInit {
     this.seriesObject.photo = this.searchRes.tvShow.image_path;
     this.seriesObject.score = this.searchRes.tvShow.rating;
     this.seriesObject.user = JSON.parse(localStorage.getItem('user'));
-    console.log(JSON.stringify(this.seriesObject));
 
   }
 

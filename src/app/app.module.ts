@@ -28,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { DiscoverComponent } from './components/discover/discover.component';
+import { RemoveSeriesComponent } from './components/remove-series/remove-series.component';
 
 
 
@@ -45,7 +46,8 @@ import { DiscoverComponent } from './components/discover/discover.component';
     SeriesListComponent,
     RegistrationComponent,
     PosterComponent,
-    DiscoverComponent
+    DiscoverComponent,
+    RemoveSeriesComponent
 
   ],
   imports: [

@@ -27,8 +27,8 @@ export class SeriesListComponent implements OnInit {
 
 
   async getAllSeries() {
-
-   this.dataSource.data = await this.seriesService.getAllSeries();
+    const userName = JSON.parse(localStorage.getItem('userName'));
+    this.dataSource.data = await this.seriesService.getAllSeries(userName);
   }
 
   async delete(series: Series) {

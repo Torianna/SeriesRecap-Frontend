@@ -38,7 +38,7 @@ export class SeriesService {
 
   private handleData(res: any) {
     const body = res;
-    console.log(body); // for development purposes only
+    console.log("body" + body); // for development purposes only
     return body || {};
   }
 
@@ -47,8 +47,8 @@ export class SeriesService {
     return Promise.reject(error.message || error);
   }
 
-  async getAllSeries(userId: number) {
-    return await this.http.get<any[]>(this.url).toPromise();
+  async getAllSeries(userName: string) {
+    return await this.http.post<any[]>(this.url + '/userName/',userName).toPromise();
   }
 
   async getSeries() {
@@ -62,5 +62,6 @@ export class SeriesService {
 
   deleteSeriesById(id: number) {
     return this.http.delete(`${ this.url }/${ id }`).toPromise();
+    alert('ok');
   }
 }

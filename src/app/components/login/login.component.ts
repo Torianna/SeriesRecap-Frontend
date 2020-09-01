@@ -45,11 +45,15 @@ export class LoginComponent {
 
   async tryLogin() {
     this.tempArrayofUser = await this.service.getUsers();
+    console.log("tempArrayofUser ::" + this.tempArrayofUser);
     const foundName = this.tempArrayofUser.find(t => t.userName === this.user.userName);
     const foundPassword = this.tempArrayofUser.find(t => t.password === this.user.password);
-
+    console.log("foundPassword ::" + foundPassword + " foundName " + foundName );
     if (foundName && foundPassword) {
+      console.log("credential matched");
       localStorage.setItem('login', 'true');
+      localStorage.setItem('user', JSON.stringify(this.user));
+      localStorage.setItem('userName', JSON.stringify(this.user.userName));
       await this.router.navigate(['/main']);
     }
   }

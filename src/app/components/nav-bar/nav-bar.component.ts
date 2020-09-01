@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 import { AddSeriesComponent } from '../add-series/add-series.component';
 import { SeriesService } from '../../services/series.service';
+import { RemoveSeriesComponent } from '../remove-series/remove-series.component';
 
 @Component({
   selector: 'app-navbar',
@@ -38,4 +39,12 @@ export class NavBarComponent implements OnInit {
       this.getAllSeries.emit();
     });
   }
+
+  openRemoveSeries(): void {
+    this.dialog.open(RemoveSeriesComponent, {}).afterClosed().subscribe(result => {
+      this.getAllSeries.emit();
+    });
+  }
+
+
 }

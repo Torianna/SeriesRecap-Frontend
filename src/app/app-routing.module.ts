@@ -8,6 +8,7 @@ import { SeriesListComponent } from './components/series-list/series-list.compon
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { DiscoverComponent } from './components/discover/discover.component';
+import { RemoveSeriesComponent } from './components/remove-series/remove-series.component';
 
 
 
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'registration',
     component: RegistrationComponent
+  },
+  {
+    path: 'remove',
+    component: RemoveSeriesComponent
   },
   {
     path: 'poster',

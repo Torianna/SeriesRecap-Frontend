@@ -30,14 +30,13 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("3");
     this.getAllSeries();
   }
 
   async getAllSeries() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    this.series = await this.seriesService.getAllSeries(user);
-
-    console.log(this.series.length);
+    const userName = JSON.parse(localStorage.getItem('userName'));
+    this.series = await this.seriesService.getAllSeries(userName);
     this.presentSeries = true;
     this.alignSeriesAccordingToCarousel();
   }
