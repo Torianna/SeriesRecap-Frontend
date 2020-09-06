@@ -46,13 +46,14 @@ export class RegistrationComponent implements OnInit {
   }
 
   async addUser() {
-    this.service.addUser(this.user).then(() => {
-      sessionStorage.setItem('user', JSON.stringify(this.user));
-      this.router.navigate(['/login']);
-    })
-      .catch(err => {
-        alert('Something went wrong');
-        console.error(err);
-      });
+
+      this.service.addUser(this.user).then(() => {
+        sessionStorage.setItem('user', JSON.stringify(this.user));
+        this.router.navigate(['/login']);
+      })
+        .catch(err => {
+          alert('Something went wrong');
+          console.error(err);
+        });
   }
 }
