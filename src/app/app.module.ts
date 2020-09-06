@@ -14,7 +14,9 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSlideToggleModule, MatStepperModule, MatTableModule
+  MatSlideToggleModule,
+  MatStepperModule,
+  MatTableModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
@@ -28,11 +30,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { DiscoverComponent } from './components/discover/discover.component';
-import { RemoveSeriesComponent } from './components/remove-series/remove-series.component';
-
-
-
-
 
 
 @NgModule({
@@ -46,8 +43,7 @@ import { RemoveSeriesComponent } from './components/remove-series/remove-series.
     SeriesListComponent,
     RegistrationComponent,
     PosterComponent,
-    DiscoverComponent,
-    RemoveSeriesComponent
+    DiscoverComponent
 
   ],
   imports: [

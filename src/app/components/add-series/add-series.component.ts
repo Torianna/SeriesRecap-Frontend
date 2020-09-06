@@ -58,13 +58,11 @@ export class AddSeriesComponent implements OnInit {
   }
 
   calculateAvarage() {
-    console.log(this.seriesObject.totalScore);
     if (this.seriesObject.rate.ending === 0) {
       this.seriesObject.totalScore = (this.seriesObject.rate.totalScore * 2) / 3;
     } else if (this.seriesObject.rate.ending !== 0) {
       this.seriesObject.totalScore = (this.seriesObject.rate.totalScore * 2) / 4;
     }
-    console.log(this.seriesObject.totalScore);
   }
 
 
@@ -79,6 +77,7 @@ export class AddSeriesComponent implements OnInit {
 
   async searchSeries() {
     this.searchRes = await this.service.searchSeries(this.searchStr);
+    this.series = [];
     for (const tv_show of this.searchRes.tv_shows) {
       this.series.push(tv_show);
     }
@@ -86,10 +85,14 @@ export class AddSeriesComponent implements OnInit {
 
 
   async addSeries() {
+    this.seriesObject.user = new User();
+    this.seriesObject.user.userName = JSON.parse(localStorage.getItem('userName'));
+    console.log(this.seriesObject.user.userName);
+    console.log(this.seriesObject);
     this.service.addSeries(this.seriesObject)
       .then(() => {
         this.dialogRef.close();
-        this.router.navigate(['/main']);
+        window.location.reload();
       })
       .catch(err => {
         console.error(err);

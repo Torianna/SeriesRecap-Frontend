@@ -10,30 +10,29 @@
         <form [formGroup]="firstFormGroup">
           <div class="info">
             <ng-template matStepLabel>Fill out information about series</ng-template>
-            <form (submit)="searchSeries()">
+            <form >
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Type your series.." class="form-control" [(ngModel)]="searchStr" name="searchStr">
+                <input matInput placeholder="Type your series.." class="form-control" [(ngModel)]="searchStr" (change)="searchSeries()" name="searchStr">
               </mat-form-field>
               <br>
-              <button class="btn btn-primary btn">Search your Favourite Series</button>
             </form>
-          <div class="flexWrap" >
-            <div *ngFor="let serie of this.series | paginate: { itemsPerPage: 10, currentPage: p }" style="padding: 5px">
-              <div class="element" (click)="createObject(serie)" (click)="goForward(stepper)">
-                <img *ngIf="serie.image_thumbnail_path" class="thumbnail" src="{{serie.image_thumbnail_path}}">
-                <div class="desc">
-                  {{serie.name}}<br>
-                  {{serie.network}}
+              <div class="flexWrap">
+                <div *ngFor="let serie of this.series | paginate: { itemsPerPage: 10, currentPage: p }" style="padding: 5px">
+                  <div class="element" (click)="createObject(serie)" (click)="goForward(stepper)">
+                    <img *ngIf="serie.image_thumbnail_path" class="thumbnail" src="{{serie.image_thumbnail_path}}">
+                    <div class="desc">
+                      {{serie.name}}<br>
+                      {{serie.network}}
+                    </div>
+                  </div>
                 </div>
+               <pagination-controls style="padding-top: 20px; " autoHide="true" (pageChange)="p = $event"></pagination-controls>
               </div>
-            </div>
-          </div>
-            <pagination-controls style="padding-top: 20px; " autoHide="true" (pageChange)="p = $event"></pagination-controls>
+            
           </div>
 
 
         </form>
-
       </mat-step>
 
       <mat-step [stepControl]="secondFormGroup">

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 import { AddSeriesComponent } from '../add-series/add-series.component';
 import { SeriesService } from '../../services/series.service';
-import { RemoveSeriesComponent } from '../remove-series/remove-series.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,24 +14,23 @@ export class NavBarComponent implements OnInit {
   localStorage: Storage = localStorage;
   data: any;
   signin: boolean;
+
   @Output() getAllSeries = new EventEmitter();
 
-  constructor(public dialog: MatDialog, private seriesService: SeriesService) {
+  constructor(public dialog: MatDialog, private router: Router) {
   }
 
   ngOnInit() {
-    this.signin = JSON.parse(localStorage.getItem('login'));
+    this.signin = JSON.parse(sessionStorage.getItem('login'));
     console.log(this.signin);
   }
 
-  onLogIn($event: Event) {
-    this.dialog.open(LoginComponent, {
-      width: '250px'
-    });
-  }
-
   onLogOut($event: Event) {
-    localStorage.removeItem('username');
+    this.signin = false;
+    sessionStorage.removeItem('login');
+    localStorage.removeItem('user');
+    localStorage.removeItem('userName');
+    this.router.navigate(['/poster']);
   }
 
   openAddSeries(): void {
@@ -39,12 +38,4 @@ export class NavBarComponent implements OnInit {
       this.getAllSeries.emit();
     });
   }
-
-  openRemoveSeries(): void {
-    this.dialog.open(RemoveSeriesComponent, {}).afterClosed().subscribe(result => {
-      this.getAllSeries.emit();
-    });
-  }
-
-
 }

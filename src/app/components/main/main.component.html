@@ -1,27 +1,29 @@
 <app-navbar></app-navbar>
-<div class="router" style=" width: 100%;" >
-  <div  class="dali" *ngIf="!this.presentSeries">
+<div class="router" style=" width: 100%;">
+  <div class="dali" *ngIf="!this.presentSeries">
     <h1>Add first series to your list:</h1>
     <img src="../../../assets/dali.jpg">
   </div>
 
-  <div class="slider" *ngIf="this.presentSeries" >
+  <div class="slider" *ngIf="this.presentSeries">
     <ngb-carousel *ngIf="series" class="ngb-carousel-head-div">
 
-      <ng-template ngbSlide *ngFor="let seriesGroup of seriesFormattedForCarousel" >
+      <ng-template ngbSlide *ngFor="let seriesGroup of seriesFormattedForCarousel">
 
         <div class="div-carousel-container-head" *ngFor="let serie of seriesGroup">
-
           <div class="div-carousel-innerhtml">
             <div class="div-containing-id-circle">
               <span class="span-circle-for-id">{{serie.id}}</span>
             </div>
-            <div class="carousel-div-image-parent">
-              <img [src]="serie.photo"  class="img-carousel-innerslide" alt="Random slide">
+            <div class="carousel-div-image-parent" *ngIf="!serie.photo.endsWith('https://static.episodate.com')">
+              <img [src]="serie.photo" class="img-carousel-innerslide" alt="Random slide">
+            </div>
+            <div class="carousel-div-image-parent" *ngIf="serie.photo.endsWith('https://static.episodate.com')">
+              <img src="../../../assets/placeholder.png"  class="img-carousel-innerslide" alt="Random slide">
             </div>
             <div class="carousel-caption">
               <h3>{{serie.name}}</h3>
-              <p ></p>
+              <p></p>
             </div>
             <div class="div-containing-rating-star">
               <span class="span-star-for-rating"></span>
@@ -35,17 +37,19 @@
     </ngb-carousel>
 
     <ngb-carousel *ngIf="series" class="ngb-carousel-head-div-mobile">
-      <ng-template ngbSlide *ngFor="let serie of series" >
+      <ng-template ngbSlide *ngFor="let serie of series">
         <div class="div-carousel-innerhtml">
           <div class="div-containing-id-circle">
             <span class="span-circle-for-id">{{serie.id}}</span>
           </div>
+
           <div class="carousel-div-image-parent">
-            <img [src]="serie.photo"  class="img-carousel-innerslide" alt="Random slide">
+            <img [src]="serie.photo" class="img-carousel-innerslide" alt="Random slide">
           </div>
+
           <div class="carousel-caption">
             <h3>{{serie.name}}</h3>
-            <p ></p>
+            <p></p>
           </div>
           <div class="div-containing-rating-star">
             <span class="span-star-for-rating"></span>

@@ -47,7 +47,7 @@ export class RegistrationComponent implements OnInit {
 
   async addUser() {
     this.service.addUser(this.user).then(() => {
-      localStorage.setItem('user', JSON.stringify(this.user));
+      sessionStorage.setItem('user', JSON.stringify(this.user));
       this.router.navigate(['/login']);
     })
       .catch(err => {

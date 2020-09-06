@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddSeriesComponent } from './components/add-series/add-series.component';
@@ -8,9 +8,6 @@ import { SeriesListComponent } from './components/series-list/series-list.compon
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { DiscoverComponent } from './components/discover/discover.component';
-import { RemoveSeriesComponent } from './components/remove-series/remove-series.component';
-
-
 
 
 const routes: Routes = [
@@ -41,10 +38,6 @@ const routes: Routes = [
   {
     path: 'registration',
     component: RegistrationComponent
-  },
-  {
-    path: 'remove',
-    component: RemoveSeriesComponent
   },
   {
     path: 'poster',
