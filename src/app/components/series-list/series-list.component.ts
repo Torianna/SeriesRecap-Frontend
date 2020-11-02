@@ -25,6 +25,9 @@ export class SeriesListComponent implements OnInit {
      this.getAllSeries();
   }
 
+  getNumber(series) {
+    return Math.round(series.totalScore * 10) / 10;
+  }
 
   async getAllSeries() {
     const userName = JSON.parse(localStorage.getItem('userName'));

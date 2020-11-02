@@ -3,24 +3,24 @@
 </div>
 <ng-template #login>
 <ng-container *ngIf="this.signin">
-  <a href="/main">
+  <a routerLink="/main">
     <img src="../../../assets/logo.png" alt="logo" class="logo">
   </a>
   <div class="buttons">
     <a (click)="openAddSeries()">Add</a>
-    <a href="/series">List</a>
-    <a href="/series">Share</a>
+    <a routerLink="/series">List</a>
+    <a routerLink="/series">Share</a>
     <a style="color: #FDB100;" (click)="onLogOut($event)">Sign out</a>
   </div>
 </ng-container>
 <ng-container *ngIf="!this.signin">
-  <a href="/poster">
+  <a routerLink="/poster">
     <img src="../../../assets/logo.png" alt="logo" class="logo">
   </a>
   <div class="buttons">
-    <a href="/discover" style="color: red; font-weight: bold;">Discover</a>
-    <a href="/registration" style="color: red; font-weight: bold;">Join</a>
-    <a href="/login" style="color: red; font-weight: bold;">Log in</a>
+    <a routerLink="/discover" style="color: red; font-weight: bold;">Discover</a>
+    <a routerLink="/registration" style="color: red; font-weight: bold;">Join</a>
+    <a routerLink="/login" style="color: red; font-weight: bold;">Log in</a>
   </div>
 </ng-container>
 </ng-template>

@@ -33,7 +33,7 @@
 
     <div mat-dialog-actions>
       <button mat-raised-button color="warn" type="submit" name="login" value="Login" (click)="tryLogin()">Sign in</button>
-      <a class="registration" href="/registration">I don't have an account..</a>
+      <a class="registration" routerLink="/registration">I don't have an account..</a>
 
     </div>
     <div *ngIf="!isUserPresent" style="color:red;">

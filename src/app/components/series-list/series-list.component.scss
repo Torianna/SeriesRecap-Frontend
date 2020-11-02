@@ -27,3 +27,11 @@ h4{
   margin-left: 100px;
   padding-bottom: 20px;
 }
+
+.table-list{
+  overflow-y: auto;
+  display: block;
+  height: auto;
+  max-height: calc(100% - 250px);
+}
+

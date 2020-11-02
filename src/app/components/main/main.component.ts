@@ -16,6 +16,16 @@ export class MainComponent implements OnInit {
 
   }
 
+  getNumber(series) {
+    return Math.round(series.totalScore * 10) / 10;
+  }
+
+  addIndex() {
+    for (let i = 0; i < this.series.length; i++) {
+      this.series[i].id = i + 1;
+    }
+  }
+
   alignSeriesAccordingToCarousel() {
     let j = -1;
     for (let i = 0; i < this.series.length; i++) {
@@ -31,6 +41,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.getAllSeries();
+    this.addIndex();
   }
 
   async getAllSeries() {
