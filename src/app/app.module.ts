@@ -30,6 +30,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { DiscoverComponent } from './components/discover/discover.component';
+import { ShareComponent } from './components/share/share.component';
+import { ShareLinkComponent } from './components/share-link/share-link.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { DiscoverComponent } from './components/discover/discover.component';
     SeriesListComponent,
     RegistrationComponent,
     PosterComponent,
-    DiscoverComponent
+    DiscoverComponent,
+    ShareComponent,
+    ShareLinkComponent
 
   ],
   imports: [

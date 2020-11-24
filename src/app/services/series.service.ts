@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Series } from '../models/series';
-import { User } from '../models/user';
+import { environment } from 'src/environments/environment';
+import { List } from '../models/list';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class SeriesService {
   searchStr: string;
 
   private series = 'https://www.episodate.com/api/search?q=';
-  private url = `http://localhost:8080/seriesRecap/series`;
+  private url = environment.baseUrl + `/seriesRecap/series`;
   private details = 'https://www.episodate.com/api/show-details?q=';
 
 
@@ -35,10 +36,9 @@ export class SeriesService {
       .catch(this.handleError);
   }
 
-
   private handleData(res: any) {
     const body = res;
-    console.log("body" + body); // for development purposes only
+    console.log('body' + body); // for development purposes only
     return body || {};
   }
 
@@ -48,7 +48,11 @@ export class SeriesService {
   }
 
   async getAllSeries(userName: string) {
-    return await this.http.post<any[]>(this.url + '/userName/',userName).toPromise();
+    return await this.http.get<any[]>(this.url + '/userName/' + userName).toPromise();
+  }
+
+   getLinkToShare(userName: string) {
+    return this.http.post<List>(this.url + '/share', userName).toPromise();
   }
 
   async getSeries() {

@@ -8,6 +8,8 @@ import { SeriesListComponent } from './components/series-list/series-list.compon
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PosterComponent } from './components/poster/poster.component';
 import { DiscoverComponent } from './components/discover/discover.component';
+import { ShareComponent } from './components/share/share.component';
+import { ShareLinkComponent } from './components/share-link/share-link.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'series',
     component: SeriesListComponent
+  },
+  {
+    path: 'generateLink',
+    component: ShareLinkComponent
+  },
+  {
+    path: 'share',
+    component: ShareComponent
   },
   {
     path: 'login',
@@ -54,4 +64,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
