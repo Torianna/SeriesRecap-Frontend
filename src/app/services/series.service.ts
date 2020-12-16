@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Series } from '../models/series';
 import { environment } from 'src/environments/environment';
-import { List } from '../models/list';
+import { ListOfSeries } from '../models/list';
 
 
 @Injectable({
@@ -51,12 +51,14 @@ export class SeriesService {
     return await this.http.get<any[]>(this.url + '/userName/' + userName).toPromise();
   }
 
-   getLinkToShare(userName: string) {
-    return this.http.post<List>(this.url + '/share', userName).toPromise();
+  async getLinkToShare(userName: string) {
+    return await this.http.post<ListOfSeries>(this.url + '/share', userName).toPromise();
+  }
+  async getSharedList(id: string) {
+    return await this.http.get<ListOfSeries>(this.url + '/share/' + id).toPromise();
   }
 
   async getSeries() {
-
     return await this.http.get<any[]>(this.series).toPromise();
   }
 

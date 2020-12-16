@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
   series: Series[] = [];
   presentSeries = false;
   seriesFormattedForCarousel: Series[][] = new Array();
+  index: number[] = [];
 
   constructor(private seriesService: SeriesService) {
 
@@ -20,9 +21,10 @@ export class MainComponent implements OnInit {
     return Math.round(series.totalScore * 10) / 10;
   }
 
-  addIndex() {
+  async addIndex() {
     for (let i = 0; i < this.series.length; i++) {
-      this.series[i].id = i + 1;
+      this.index[i] = i + 1;
+      console.log(this.index[i]);
     }
   }
 
@@ -41,7 +43,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.getAllSeries();
-    this.addIndex();
   }
 
   async getAllSeries() {
@@ -52,6 +53,7 @@ export class MainComponent implements OnInit {
       this.presentSeries = true;
     }
     this.alignSeriesAccordingToCarousel();
+    this.addIndex();
   }
 }
 

@@ -4,6 +4,7 @@ import { LoginComponent } from '../login/login.component';
 import { AddSeriesComponent } from '../add-series/add-series.component';
 import { SeriesService } from '../../services/series.service';
 import { Router } from '@angular/router';
+import { ShareLinkComponent } from '../share-link/share-link.component';
 
 @Component({
   selector: 'app-navbar',
@@ -37,5 +38,9 @@ export class NavBarComponent implements OnInit {
     this.dialog.open(AddSeriesComponent, {}).afterClosed().subscribe(result => {
       this.getAllSeries.emit();
     });
+  }
+
+  openGenerateLink(): void {
+    this.dialog.open(ShareLinkComponent, {});
   }
 }

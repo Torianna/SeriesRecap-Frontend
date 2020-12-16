@@ -13,7 +13,7 @@
         <div class="div-carousel-container-head" *ngFor="let serie of seriesGroup; let i = index">
           <div class="div-carousel-innerhtml">
             <div class="div-containing-id-circle">
-              <span class="span-circle-for-id">{{serie.id}}</span>
+              <span class="span-circle-for-id">{{index[i]}}</span>
             </div>
             <div class="carousel-div-image-parent" *ngIf="!serie.photo.endsWith('https://static.episodate.com')">
               <img [src]="serie.photo" class="img-carousel-innerslide" alt="Random slide">
