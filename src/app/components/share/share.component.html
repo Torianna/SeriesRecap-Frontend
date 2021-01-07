@@ -1,0 +1,54 @@
+<h4>Your series:</h4>
+<div class="table-list">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" align="center">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> no.</th>
+      <td mat-cell *matCellDef="let i=index"> {{i+1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="photo">
+      <th mat-header-cell *matHeaderCellDef> photo</th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="element.id==1">
+          <img src="{{element.photo}}" style="width: 140px;">
+        </div>
+        <div *ngIf="element.id!=1 && !element.photo.endsWith('https://static.episodate.com')">
+          <img src="{{element.photo}}" style="width: 100px;">
+        </div>
+        <div *ngIf="element.id!=1 && element.photo.endsWith('https://static.episodate.com')">
+          <img src="../../../assets/placeholder.png" style="width: 100px;">
+        </div>
+
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef> avarage rate</th>
+      <td mat-cell *matCellDef="let element" >
+        <div *ngIf="element.score!=0">
+          {{element.score}}
+        </div>
+        <div *ngIf="element.score==0">
+          Not scored
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalScore">
+      <th mat-header-cell *matHeaderCellDef> your rate</th>
+      <td mat-cell *matCellDef="let element"> {{ getNumber(element) }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+

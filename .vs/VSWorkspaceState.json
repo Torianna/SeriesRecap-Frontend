@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\remove-series",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\components\\remove-series\\remove-series.component.html",
+  "PreviewInSolutionExplorer": false
+}

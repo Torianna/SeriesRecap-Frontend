@@ -1,0 +1,37 @@
+mat-drawer-container {
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+
+table {
+  width: 90%;
+}
+.body{
+  background-color: black;
+}
+
+.mat-cell, .mat-header-cell {
+  color: white;
+  border: 1px solid #FDB100;
+  text-align:center;
+}
+
+.mat-table{
+  background-color: black;
+  border: 1px solid #FDB100;
+}
+
+h4{
+  color:white;
+  margin-left: 100px;
+  padding-bottom: 20px;
+}
+
+.table-list{
+  overflow-y: auto;
+  display: block;
+  height: auto;
+  max-height: calc(100% - 250px);
+}
+
