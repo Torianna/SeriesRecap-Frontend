@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SeriesService } from '../../services/series.service';
 import { MatDialogRef, MatHorizontalStepper } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class AddSeriesComponent implements OnInit {
 
-
+  @Output() getAllSeries = new EventEmitter();
   photo: string;
   isUrl = false;
   p = 1;
@@ -53,7 +53,7 @@ export class AddSeriesComponent implements OnInit {
               private user: UserService,
               private dialogRef: MatDialogRef<AddSeriesComponent>,
               private formBuilder: FormBuilder,
-              private router: Router ) {
+              private router: Router) {
     this.series = [];
   }
 
@@ -75,6 +75,7 @@ export class AddSeriesComponent implements OnInit {
     });
   }
 
+
   async searchSeries() {
     this.searchRes = await this.service.searchSeries(this.searchStr);
     this.series = [];
@@ -92,7 +93,6 @@ export class AddSeriesComponent implements OnInit {
     this.service.addSeries(this.seriesObject)
       .then(() => {
         this.dialogRef.close();
-        window.location.reload();
       })
       .catch(err => {
         console.error(err);

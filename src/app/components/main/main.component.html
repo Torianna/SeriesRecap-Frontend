@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar (getAllSeries)="getAllSeries()"></app-navbar>
 <div class="router" style=" width: 100%;">
   <div class="dali" *ngIf="!this.presentSeries">
     <h1>Add first series to your list:</h1>
