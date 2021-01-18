@@ -32,8 +32,6 @@ import { PosterComponent } from './components/poster/poster.component';
 import { DiscoverComponent } from './components/discover/discover.component';
 import { ShareComponent } from './components/share/share.component';
 import { ShareLinkComponent } from './components/share-link/share-link.component';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
-
 
 @NgModule({
   declarations: [
@@ -74,7 +72,7 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
     NgxPaginationModule,
     NgxPaginationModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -37,6 +37,9 @@ export class NavBarComponent implements OnInit {
   openAddSeries(): void {
     this.dialog.open(AddSeriesComponent, {}).afterClosed().subscribe(result => {
       this.getAllSeries.emit();
+      this.router.navigateByUrl('/main', { skipLocationChange: true }).then(() => {
+        this.router.navigate([this.router.url]);
+      });
     });
   }
 

@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://series-recap.pl',
-  frontUrl: 'http://series-recap.pl'
+  baseUrl: 'https://series-recap.pl',
+  frontUrl: 'https://series-recap.pl'
 };

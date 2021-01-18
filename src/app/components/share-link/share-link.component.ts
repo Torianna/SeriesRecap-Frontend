@@ -21,7 +21,7 @@ export class ShareLinkComponent implements OnInit {
     const linkToShare = this.seriesService.getLinkToShare(localStorage.getItem('userName'));
     this.link = await linkToShare;
     console.log(this.link.id);
-    this.fullLink = environment.baseUrl + `/share/${this.link.id}`;
+    this.fullLink = environment.baseUrl + `/share?id=${this.link.id}`;
     return this.fullLink;
   }
 }
